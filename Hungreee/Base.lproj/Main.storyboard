@@ -29,7 +29,11 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fc7-C1-Wm3">
                                 <rect key="frame" x="363" y="506" width="50" height="50"/>
-                                <state key="normal" image="liked">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="BIa-Iz-PbV"/>
+                                    <constraint firstAttribute="width" constant="50" id="BbJ-YV-2an"/>
+                                </constraints>
+                                <state key="normal" image="icon_eat">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -86,8 +90,17 @@
                                                 <constraint firstAttribute="width" secondItem="HUG-Mp-Aqa" secondAttribute="height" multiplier="1:1" id="Ivk-W4-Mmp"/>
                                             </constraints>
                                         </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cDM-BC-5fT">
+                                            <rect key="frame" x="256" y="306" width="88" height="88"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="88" id="VUd-1x-dtj"/>
+                                                <constraint firstAttribute="width" constant="88" id="rr2-kZ-aNi"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="cDM-BC-5fT" secondAttribute="bottom" constant="-44" id="7lt-fL-iip"/>
+                                        <constraint firstAttribute="centerX" secondItem="cDM-BC-5fT" secondAttribute="centerX" id="MTZ-7T-jjq"/>
                                         <constraint firstAttribute="bottom" secondItem="HUG-Mp-Aqa" secondAttribute="bottom" id="Oj1-lu-C8x"/>
                                         <constraint firstAttribute="centerX" secondItem="HUG-Mp-Aqa" secondAttribute="centerX" id="sK5-96-ZSu"/>
                                         <constraint firstItem="HUG-Mp-Aqa" firstAttribute="top" secondItem="RmY-l1-Vh9" secondAttribute="top" id="x4l-6y-LZn"/>
@@ -95,7 +108,15 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="itemImageView" destination="HUG-Mp-Aqa" id="thf-tw-0zF"/>
+                                    <outlet property="shopImageView" destination="cDM-BC-5fT" id="7iP-2R-QGj"/>
                                 </connections>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="U3T-zr-mPN">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="U3T-zr-mPN" id="dao-BM-sCs">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -128,7 +149,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="liked" width="50" height="50"/>
+        <image name="icon_eat" width="479" height="481"/>
         <image name="nope" width="50" height="50"/>
     </resources>
 </document>
