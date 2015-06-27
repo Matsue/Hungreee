@@ -10,12 +10,14 @@ import UIKit
 
 class ItemDetailPaymentsTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var cashPaymentImageView: CircleImageView!
-    @IBOutlet weak var workPaymentImageView: CircleImageView!
-    @IBOutlet weak var snsPaymentImageView: CircleImageView!
+    @IBOutlet weak private(set) var cashPaymentImageView: CircleImageView!
+    @IBOutlet weak private(set) var workPaymentImageView: CircleImageView!
+    @IBOutlet weak private(set) var snsPaymentImageView: CircleImageView!
+    @IBOutlet weak private(set) var applyButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        applyButton.layer.cornerRadius = 4.0
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -30,4 +32,6 @@ class ItemDetailPaymentsTableViewCell: UITableViewCell {
         snsPaymentImageView.sd_setImageWithURL(NSURL(string: item.imageUrl))
     }
     
+    @IBAction func apply(sender: UIButton) {
+    }
 }
