@@ -22,7 +22,7 @@ class ChooseItemView: MDCSwipeToChooseView {
     
     required init(frame: CGRect, item: Item, options: MDCSwipeToChooseViewOptions) {
         super.init(frame: frame, options: options)
-        
+        self.backgroundColor = UIColor.whiteColor()
         self.item = item
         self.imageView.sd_setImageWithURL(NSURL(string: item.imageUrl))
         self.autoresizingMask = UIViewAutoresizing.FlexibleHeight | UIViewAutoresizing.FlexibleWidth
