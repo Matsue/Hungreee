@@ -11,42 +11,27 @@ import MDCSwipeToChoose
 
 class ChooseItemViewController: UIViewController, MDCSwipeToChooseDelegate {
     
-    var items: [Item] = []
     let ChooseItemButtonHorizontalPadding: CGFloat = 80.0
     let ChooseItemButtonVerticalPadding: CGFloat = 20.0
-    var currentItem: Item!
+    var items: [Item] = []
     var frontCardView: ChooseItemView!
     var backCardView: ChooseItemView!
+    @IBOutlet weak var nopeButton: UIButton!
+    @IBOutlet weak var likeButton: UIButton!
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.items = defaultItems()
+        loadItems()
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        self.items = defaultItems()
-        // Here you can init your properties
+        loadItems()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Display the first ChooseItemView in front. Users can swipe to indicate
-        // whether they like or dislike the item displayed.
-        self.setFrontCardViewSwift(self.popItemViewWithFrame(frontCardViewFrame())!)
-        self.view.addSubview(self.frontCardView)
-        
-        // Display the second ChooseItemView in back. This view controller uses
-        // the MDCSwipeToChooseDelegate protocol methods to update the front and
-        // back views after each user swipe.
-        self.backCardView = self.popItemViewWithFrame(backCardViewFrame())!
-        self.view.insertSubview(self.backCardView, belowSubview: self.frontCardView)
-        
-        // Add buttons to programmatically swipe the view left or right.
-        // See the `nopeFrontCardView` and `likeFrontCardView` methods.
-        constructNopeButton()
-        constructLikedButton()
+        showFirstCards()
     }
     
     func suportedInterfaceOrientations() -> UIInterfaceOrientationMask{
@@ -56,22 +41,23 @@ class ChooseItemViewController: UIViewController, MDCSwipeToChooseDelegate {
     
     // This is called when a user didn't fully swipe left or right.
     func viewDidCancelSwipe(view: UIView) -> Void{
-        println("You couldn't decide on \(self.currentItem.title)");
+        println("You couldn't decide on \(self.currentItem()?.title)");
     }
     
     // This is called then a user swipes the view fully left or right.
-    func view(view: UIView, wasChosenWithDirection: MDCSwipeDirection) -> Void{
+    func view(view: UIView, wasChosenWithDirection: MDCSwipeDirection) -> Void {
+        layoutButtonsIfNeeded()
         
         // MDCSwipeToChooseView shows "NOPE" on swipes to the left,
         // and "LIKED" on swipes to the right.
         if(wasChosenWithDirection == MDCSwipeDirection.Left){
-            println("You noped: \(self.currentItem.title)")
+            println("You noped: \(self.currentItem()?.title)")
         }
         else{
-            println("You liked: \(self.currentItem.title)")
-            let itemDetailViewController = storyboard?.instantiateViewControllerWithIdentifier("ItemDetailViewControllerID") as! ItemDetailViewController
-            itemDetailViewController.configureWithItem(currentItem)
-            navigationController?.pushViewController(itemDetailViewController, animated: true)
+            println("You liked: \(self.currentItem()?.title)")
+            let itemDetailTableViewController = storyboard?.instantiateViewControllerWithIdentifier("ItemDetailTableViewControllerID") as! ItemDetailTableViewController
+            itemDetailTableViewController.constructWithItem(currentItem()!)
+            navigationController?.pushViewController(itemDetailTableViewController, animated: true)
         }
         
         // MDCSwipeToChooseView removes the view from the view hierarchy
@@ -79,7 +65,7 @@ class ChooseItemViewController: UIViewController, MDCSwipeToChooseDelegate {
         // MDCSwipeOptions class). Since the front card view is gone, we
         // move the back card to the front, and create a new back card.
         if(self.backCardView != nil){
-            self.setFrontCardViewSwift(self.backCardView)
+            frontCardView = backCardView
         }
         
         backCardView = self.popItemViewWithFrame(self.backCardViewFrame())
@@ -94,20 +80,21 @@ class ChooseItemViewController: UIViewController, MDCSwipeToChooseDelegate {
         }
     }
     
-    func setFrontCardViewSwift(frontCardView:ChooseItemView) -> Void {
-        
-        // Keep track of the item currently being chosen.
-        // Quick and dirty, just for the purposes of this sample app.
-        self.frontCardView = frontCardView
-        self.currentItem = frontCardView.item
-    }
-    
     func defaultItems() -> [Item] {
         let items = [
             Item(
-                id: "0",
-                title: "Super muffine",
-                imageUrl: "http://image1-1.tabelog.k-img.com/restaurant/images/Rvw/29565/320x320_square_29565024.jpg",
+                id: "3",
+                title: "Let's eat together, Humberger",
+                imageUrl: "https://photos-2.dropbox.com/t/2/AAB_bO_M-WgZsfHujRr5SrLZ54OG4xV-2iFhOFicTmLJlw/12/24604400/jpeg/32x32/1/1435413600/0/2/PHOT000000000009A505_500_0.jpg/CPDd3QsgASACIAMgBCAFIAYgBygC/QWvowxvLVbd3Z4dlJaUHZdYtpt8Py_YdH9WlI0b4Giw?size=1280x960&size_mode=2",
+                paybackTypes: ["review"],
+                reviewScore: "5",
+                lat: "35.666851",
+                lng: "139.74955"
+            ),
+            Item(
+                id: "4",
+                title: "New menu \"Steak\" at Restaurant \"Meat\"",
+                imageUrl: "https://photos-6.dropbox.com/t/2/AACzTvQ0gdxHyxKJ3Yo-I6Uuai0TH02EqIPVLZBUIPJn6w/12/24604400/jpeg/32x32/1/1435413600/0/2/PHOT000000000011C7B7.jpg/CPDd3QsgASACIAMgBCAFIAYgBygC/GX6OtjaZ0ImEMGWrDzxzTPT3yDs-LCYrsHOBd3bn72k?size=1280x960&size_mode=2",
                 paybackTypes: ["review"],
                 reviewScore: "5",
                 lat: "35.666851",
@@ -115,6 +102,15 @@ class ChooseItemViewController: UIViewController, MDCSwipeToChooseDelegate {
             ),
             Item(
                 id: "2",
+                title: "Restaurant \"Paella\"'s Paella",
+                imageUrl: "https://photos-5.dropbox.com/t/2/AADTh4EsYtEhttnqEoZyijKENHncsWrRHuFewRbOmpxZJw/12/24604400/jpeg/32x32/1/1435413600/0/2/PHOT00000000000B9DB9.jpg/CPDd3QsgASACIAMgBCAFIAYgBygC/lBbbzT6YSo3S1gx4U8WJbNKcG0jvxjb0GnM07s2jYNc?size=1280x960&size_mode=2",
+                paybackTypes: ["review"],
+                reviewScore: "5",
+                lat: "35.666851",
+                lng: "139.74955"
+            ),
+            Item(
+                id: "1",
                 title: "Excellent pizzaaaa!!!",
                 imageUrl: "https://farm6.staticflickr.com/5174/5499265262_094f6db195_q_d.jpg",
                 paybackTypes: ["review"],
@@ -125,11 +121,10 @@ class ChooseItemViewController: UIViewController, MDCSwipeToChooseDelegate {
         ]
         
         return items
-        //            [Item(name: "Finn", image: UIImage(named: "finn"), age: 21, sharedFriends: 3, sharedInterest: 4, photos: 5), Item(name: "Jake", image: UIImage(named: "jake"), age: 21, sharedFriends: 3, sharedInterest: 4, photos: 5), Item(name: "Fiona", image: UIImage(named: "fiona"), age: 21, sharedFriends: 3, sharedInterest: 4, photos: 5), Item(name: "P.Gumball", image: UIImage(named: "prince"), age: 21, sharedFriends: 3, sharedInterest: 4, photos: 5)]
     }
     
     func popItemViewWithFrame(frame:CGRect) -> ChooseItemView? {
-        if(self.items.count == 0){
+        if(items.count == 0) {
             return nil;
         }
         
@@ -164,33 +159,58 @@ class ChooseItemViewController: UIViewController, MDCSwipeToChooseDelegate {
         return CGRectMake(frontFrame.origin.x, frontFrame.origin.y + 10.0, CGRectGetWidth(frontFrame), CGRectGetHeight(frontFrame))
     }
     
-    func constructNopeButton() -> Void {
-        let button:UIButton =  UIButton.buttonWithType(UIButtonType.System) as! UIButton
-        let image:UIImage = UIImage(named:"nope")!
-        button.frame = CGRectMake(ChooseItemButtonHorizontalPadding, CGRectGetMaxY(self.backCardView.frame) + ChooseItemButtonVerticalPadding, image.size.width, image.size.height)
-        button.setImage(image, forState: UIControlState.Normal)
-        button.tintColor = UIColor(red: 247.0/255.0, green: 91.0/255.0, blue: 37.0/255.0, alpha: 1.0)
-        button.addTarget(self, action: "nopeFrontCardView", forControlEvents: UIControlEvents.TouchUpInside)
-        self.view.addSubview(button)
-    }
-    
-    func constructLikedButton() -> Void {
-        let button:UIButton = UIButton.buttonWithType(UIButtonType.System) as! UIButton
-        let image:UIImage = UIImage(named:"liked")!
-        button.frame = CGRectMake(CGRectGetMaxX(self.view.frame) - image.size.width - ChooseItemButtonHorizontalPadding, CGRectGetMaxY(self.backCardView.frame) + ChooseItemButtonVerticalPadding, image.size.width, image.size.height)
-        button.setImage(image, forState:UIControlState.Normal)
-        button.tintColor = UIColor(red: 29.0/255.0, green: 245.0/255.0, blue: 106.0/255.0, alpha: 1.0)
-        button.addTarget(self, action: "likeFrontCardView", forControlEvents: UIControlEvents.TouchUpInside)
-        self.view.addSubview(button)
-        
-    }
-    
     func nopeFrontCardView() -> Void {
         self.frontCardView.mdc_swipe(MDCSwipeDirection.Left)
     }
     
     func likeFrontCardView() -> Void {
         self.frontCardView.mdc_swipe(MDCSwipeDirection.Right)
+    }
+    
+    // Mark: Private
+    
+    private func loadItems() -> Void {
+        self.items = defaultItems()
+    }
+    
+    private func layoutButtonsIfNeeded
+        () {
+        if backCardView == nil {
+            nopeButton.hidden = true
+            likeButton.hidden = true
+        }
+    }
+    
+    private func showFirstCards() -> Void {
+        // Display the first ChooseItemView in front. Users can swipe to indicate
+        // whether they like or dislike the item displayed.
+        frontCardView = popItemViewWithFrame(frontCardViewFrame())!
+        view.addSubview(frontCardView)
+        
+        // Display the second ChooseItemView in back. This view controller uses
+        // the MDCSwipeToChooseDelegate protocol methods to update the front and
+        // back views after each user swipe.
+        backCardView = popItemViewWithFrame(backCardViewFrame())!
+        view.insertSubview(backCardView, belowSubview: frontCardView)
+    }
+    
+    private func currentItem() -> Item? {
+        return frontCardView.item
+    }
+    
+    // Mark: IBActions
+    
+    @IBAction func nopeFrontCardView(sender: UIButton) {
+        nopeFrontCardView()
+    }
+    
+    @IBAction func likeFrontCardView(sender: UIButton) {
+        likeFrontCardView()
+    }
+    
+    @IBAction func reloadItems(sender: UIButton) {
+        loadItems()
+        showFirstCards()
     }
     
 }

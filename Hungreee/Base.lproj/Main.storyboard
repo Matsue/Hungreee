@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="6cx-qq-9cf">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Choose Item View Controller-->
@@ -15,31 +16,118 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tb2-qF-hRE">
+                                <rect key="frame" x="187" y="506" width="50" height="50"/>
+                                <state key="normal" image="nope">
+                                    <color key="titleColor" red="0.96862745098039216" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="nopeFrontCardView:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="wsg-H3-98z"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fc7-C1-Wm3">
+                                <rect key="frame" x="363" y="506" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="BIa-Iz-PbV"/>
+                                    <constraint firstAttribute="width" constant="50" id="BbJ-YV-2an"/>
+                                </constraints>
+                                <state key="normal" image="icon_eat">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="likeFrontCardView:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="2dy-ah-5hj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yjw-Yu-SxB">
+                                <rect key="frame" x="210" y="285" width="180" height="30"/>
+                                <state key="normal" title="Show me more foooods!!!!">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="reloadItems:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="d8S-0B-XEf"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="yjw-Yu-SxB" secondAttribute="centerY" id="EcK-7K-xFV"/>
+                            <constraint firstItem="Fc7-C1-Wm3" firstAttribute="centerY" secondItem="Tb2-qF-hRE" secondAttribute="centerY" id="F3U-gg-QSU"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Tb2-qF-hRE" secondAttribute="bottom" constant="44" id="HhG-tY-i0p"/>
+                            <constraint firstAttribute="centerX" secondItem="Tb2-qF-hRE" secondAttribute="centerX" constant="88" id="QCs-cZ-Wfi"/>
+                            <constraint firstAttribute="centerX" secondItem="yjw-Yu-SxB" secondAttribute="centerX" id="j4m-Np-auM"/>
+                            <constraint firstAttribute="centerX" secondItem="Fc7-C1-Wm3" secondAttribute="centerX" constant="-88" id="qcM-ce-lg9"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="1vC-uz-gjm"/>
+                    <connections>
+                        <outlet property="likeButton" destination="Fc7-C1-Wm3" id="TFS-pm-7hv"/>
+                        <outlet property="nopeButton" destination="Tb2-qF-hRE" id="Sbp-1v-XdF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="608" y="51"/>
         </scene>
-        <!--Item Detail View Controller-->
-        <scene sceneID="B7l-9T-YSo">
+        <!--Item Detail Table View Controller-->
+        <scene sceneID="D7I-wf-B0a">
             <objects>
-                <viewController storyboardIdentifier="ItemDetailViewControllerID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="X56-Fd-KnV" customClass="ItemDetailViewController" customModule="Hungreee" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="CaC-2s-d1I"/>
-                        <viewControllerLayoutGuide type="bottom" id="72i-fT-BgG"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="tGv-TQ-FSM">
+                <tableViewController storyboardIdentifier="ItemDetailTableViewControllerID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nWt-3z-dHU" customClass="ItemDetailTableViewController" customModule="Hungreee" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="351" sectionHeaderHeight="22" sectionFooterHeight="22" id="UH4-MJ-SMd">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4SO-LW-b6e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemDetailImageTableViewCellID" rowHeight="351" id="x2r-PY-4sp" customClass="ItemDetailImageTableViewCell" customModule="Hungreee" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="x2r-PY-4sp" id="RmY-l1-Vh9">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HUG-Mp-Aqa">
+                                            <rect key="frame" x="125" y="0.0" width="350" height="350"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="HUG-Mp-Aqa" secondAttribute="height" multiplier="1:1" id="Ivk-W4-Mmp"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cDM-BC-5fT">
+                                            <rect key="frame" x="256" y="306" width="88" height="88"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="88" id="VUd-1x-dtj"/>
+                                                <constraint firstAttribute="width" constant="88" id="rr2-kZ-aNi"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="cDM-BC-5fT" secondAttribute="bottom" constant="-44" id="7lt-fL-iip"/>
+                                        <constraint firstAttribute="centerX" secondItem="cDM-BC-5fT" secondAttribute="centerX" id="MTZ-7T-jjq"/>
+                                        <constraint firstAttribute="bottom" secondItem="HUG-Mp-Aqa" secondAttribute="bottom" id="Oj1-lu-C8x"/>
+                                        <constraint firstAttribute="centerX" secondItem="HUG-Mp-Aqa" secondAttribute="centerX" id="sK5-96-ZSu"/>
+                                        <constraint firstItem="HUG-Mp-Aqa" firstAttribute="top" secondItem="RmY-l1-Vh9" secondAttribute="top" id="x4l-6y-LZn"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="itemImageView" destination="HUG-Mp-Aqa" id="thf-tw-0zF"/>
+                                    <outlet property="shopImageView" destination="cDM-BC-5fT" id="7iP-2R-QGj"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="U3T-zr-mPN">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="U3T-zr-mPN" id="dao-BM-sCs">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="nWt-3z-dHU" id="hkS-Nv-Nda"/>
+                            <outlet property="delegate" destination="nWt-3z-dHU" id="HaA-Ag-RBD"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b05-Ko-Q9J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1324" y="55"/>
+            <point key="canvasLocation" x="1314" y="51"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="27b-zm-NxJ">
@@ -60,4 +148,8 @@
             <point key="canvasLocation" x="-204" y="51"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon_eat" width="479" height="481"/>
+        <image name="nope" width="50" height="50"/>
+    </resources>
 </document>
