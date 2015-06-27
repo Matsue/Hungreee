@@ -11,6 +11,8 @@ import DJWStarRatingView
 
 class ItemDescriptionTableViewCell: UITableViewCell {
 
+    @IBOutlet weak private(set) var titleLabel: UILabel!
+    @IBOutlet weak private(set) var subtitleLabel: UILabel!
     @IBOutlet weak private(set) var starRatingView: UIView!
     @IBOutlet weak private(set) var reviewScoreLabel: UILabel!
     
@@ -21,6 +23,8 @@ class ItemDescriptionTableViewCell: UITableViewCell {
     // MARK: Construction
     
     func constructWithItem(item: Item) {
+        titleLabel.text = item.title
+        subtitleLabel.text = item.title
         let starView = DJWStarRatingView(
             starSize: CGSize(width: 20, height: 20),
             numberOfStars: 5,

@@ -41,7 +41,7 @@ class ChooseItemViewController: UIViewController, MDCSwipeToChooseDelegate {
     
     // This is called when a user didn't fully swipe left or right.
     func viewDidCancelSwipe(view: UIView) -> Void{
-        println("You couldn't decide on \(self.currentItem()?.title)");
+        println("You couldn't decide on \(self.currentItem()?.title)")
     }
     
     // This is called then a user swipes the view fully left or right.
@@ -55,6 +55,16 @@ class ChooseItemViewController: UIViewController, MDCSwipeToChooseDelegate {
         }
         else{
             println("You liked: \(self.currentItem()?.title)")
+            
+            // Customize animation for pushViewController
+            var transition = CATransition()
+            transition.duration = 0.45
+            transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+            transition.type = kCATransitionMoveIn
+            transition.subtype = kCATransitionFromTop
+            navigationController!.view.layer.addAnimation(transition, forKey: kCATransition)
+            
+            // Open next page
             let itemDetailTableViewController = storyboard?.instantiateViewControllerWithIdentifier("ItemDetailTableViewControllerID") as! ItemDetailTableViewController
             itemDetailTableViewController.constructWithItem(currentItem()!)
             navigationController?.pushViewController(itemDetailTableViewController, animated: true)
@@ -125,7 +135,7 @@ class ChooseItemViewController: UIViewController, MDCSwipeToChooseDelegate {
     
     func popItemViewWithFrame(frame:CGRect) -> ChooseItemView? {
         if(items.count == 0) {
-            return nil;
+            return nil
         }
         
         // UIView+MDCSwipeToChoose and MDCSwipeToChooseView are heavily customizable.
@@ -173,11 +183,13 @@ class ChooseItemViewController: UIViewController, MDCSwipeToChooseDelegate {
         self.items = defaultItems()
     }
     
-    private func layoutButtonsIfNeeded
-        () {
+    private func layoutButtonsIfNeeded() {
         if backCardView == nil {
             nopeButton.hidden = true
             likeButton.hidden = true
+        } else {
+            nopeButton.hidden = false
+            likeButton.hidden = false
         }
     }
     
@@ -211,6 +223,7 @@ class ChooseItemViewController: UIViewController, MDCSwipeToChooseDelegate {
     @IBAction func reloadItems(sender: UIButton) {
         loadItems()
         showFirstCards()
+        layoutButtonsIfNeeded()
     }
     
 }

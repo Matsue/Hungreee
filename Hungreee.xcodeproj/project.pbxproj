@@ -162,7 +162,6 @@
 			isa = PBXGroup;
 			children = (
 				7DDD15121B3EBD62004B9E1E /* ItemDetail */,
-				7D70F5821B3E79D000A54926 /* ImagelabelView.swift */,
 				7DDD150C1B3EAD6D004B9E1E /* ChooseItemView.swift */,
 			);
 			name = Views;
@@ -173,6 +172,7 @@
 			children = (
 				7DDD15141B3EBDF5004B9E1E /* ItemDetailImageTableViewCell.swift */,
 				7DDD15161B3EEDEA004B9E1E /* ItemDescriptionTableViewCell.swift */,
+				7D70F5821B3E79D000A54926 /* ImagelabelView.swift */,
 			);
 			name = ItemDetail;
 			sourceTree = "<group>";

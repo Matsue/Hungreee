@@ -74,7 +74,7 @@ class ItemDetailTableViewController: UITableViewController {
         
         switch indexPath.row {
         case ItemDetailTableViewRows.ItemImageRow.hashValue:
-            height = view.frame.width // height and width are same to make square
+            height = view.frame.width / 2
             
         default:
             height = 0
