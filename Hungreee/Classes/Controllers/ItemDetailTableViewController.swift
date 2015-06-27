@@ -29,10 +29,6 @@ class ItemDetailTableViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
-        if let _item = item {
-            title = _item.title as String
-        }
     }
     
     // MARK: Construction

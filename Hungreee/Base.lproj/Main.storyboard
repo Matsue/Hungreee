@@ -20,7 +20,11 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tb2-qF-hRE">
                                 <rect key="frame" x="187" y="506" width="50" height="50"/>
-                                <state key="normal" image="nope">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="BJU-nG-4dc"/>
+                                    <constraint firstAttribute="height" constant="50" id="wDM-SF-XBR"/>
+                                </constraints>
+                                <state key="normal" image="noteat">
                                     <color key="titleColor" red="0.96862745098039216" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -34,7 +38,7 @@
                                     <constraint firstAttribute="height" constant="50" id="BIa-Iz-PbV"/>
                                     <constraint firstAttribute="width" constant="50" id="BbJ-YV-2an"/>
                                 </constraints>
-                                <state key="normal" image="icon_eat">
+                                <state key="normal" image="eat">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -283,7 +287,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icon_eat" width="479" height="481"/>
-        <image name="nope" width="50" height="50"/>
+        <image name="eat" width="479" height="481"/>
+        <image name="noteat" width="490" height="490"/>
     </resources>
 </document>
