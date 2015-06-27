@@ -8,6 +8,7 @@ pod 'Alamofire', '~> 1.2'
 pod "MDCSwipeToChoose"
 # https://github.com/rs/SDWebImage
 pod 'SDWebImage', '~>3.7'
+pod 'DJWStarRatingView'
 
 # https://github.com/SwiftyJSON/SwiftyJSON
 pod 'SwiftyJSON', '~> 2.2.0'

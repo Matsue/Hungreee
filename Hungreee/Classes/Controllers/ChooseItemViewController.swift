@@ -87,7 +87,7 @@ class ChooseItemViewController: UIViewController, MDCSwipeToChooseDelegate {
                 title: "Let's eat together, Humberger",
                 imageUrl: "https://photos-2.dropbox.com/t/2/AAB_bO_M-WgZsfHujRr5SrLZ54OG4xV-2iFhOFicTmLJlw/12/24604400/jpeg/32x32/1/1435413600/0/2/PHOT000000000009A505_500_0.jpg/CPDd3QsgASACIAMgBCAFIAYgBygC/QWvowxvLVbd3Z4dlJaUHZdYtpt8Py_YdH9WlI0b4Giw?size=1280x960&size_mode=2",
                 paybackTypes: ["review"],
-                reviewScore: "5",
+                reviewScore: "4",
                 lat: "35.666851",
                 lng: "139.74955"
             ),
@@ -96,7 +96,7 @@ class ChooseItemViewController: UIViewController, MDCSwipeToChooseDelegate {
                 title: "New menu \"Steak\" at Restaurant \"Meat\"",
                 imageUrl: "https://photos-6.dropbox.com/t/2/AACzTvQ0gdxHyxKJ3Yo-I6Uuai0TH02EqIPVLZBUIPJn6w/12/24604400/jpeg/32x32/1/1435413600/0/2/PHOT000000000011C7B7.jpg/CPDd3QsgASACIAMgBCAFIAYgBygC/GX6OtjaZ0ImEMGWrDzxzTPT3yDs-LCYrsHOBd3bn72k?size=1280x960&size_mode=2",
                 paybackTypes: ["review"],
-                reviewScore: "5",
+                reviewScore: "3",
                 lat: "35.666851",
                 lng: "139.74955"
             ),
@@ -114,7 +114,7 @@ class ChooseItemViewController: UIViewController, MDCSwipeToChooseDelegate {
                 title: "Excellent pizzaaaa!!!",
                 imageUrl: "https://farm6.staticflickr.com/5174/5499265262_094f6db195_q_d.jpg",
                 paybackTypes: ["review"],
-                reviewScore: "5",
+                reviewScore: "2",
                 lat: "35.666851",
                 lng: "139.74955"
             )

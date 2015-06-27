@@ -21,12 +21,6 @@ class ItemDetailImageTableViewCell: UITableViewCell {
         shopImageView.clipsToBounds = true
         self.bringSubviewToFront(shopImageView)
     }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
     
     // MARK: Construction
     

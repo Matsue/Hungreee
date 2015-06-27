@@ -12,15 +12,13 @@
 		7D1EA5291B3E6F7A00F273AC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D1EA5281B3E6F7A00F273AC /* Images.xcassets */; };
 		7D1EA52C1B3E6F7A00F273AC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D1EA52A1B3E6F7A00F273AC /* LaunchScreen.xib */; };
 		7D1EA5381B3E6F7A00F273AC /* HungreeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1EA5371B3E6F7A00F273AC /* HungreeeTests.swift */; };
-		7D70F57D1B3E78C200A54926 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D70F57C1B3E78C200A54926 /* Person.swift */; };
 		7D70F5831B3E79D000A54926 /* ImagelabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D70F5821B3E79D000A54926 /* ImagelabelView.swift */; };
-		7D70F5851B3E7A4F00A54926 /* ChoosePersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D70F5841B3E7A4F00A54926 /* ChoosePersonViewController.swift */; };
-		7D70F5871B3E7B6300A54926 /* ChoosePersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D70F5861B3E7B6300A54926 /* ChoosePersonView.swift */; };
 		7D70F58B1B3E981600A54926 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D70F58A1B3E981600A54926 /* Item.swift */; };
 		7DDD150D1B3EAD6D004B9E1E /* ChooseItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDD150C1B3EAD6D004B9E1E /* ChooseItemView.swift */; };
 		7DDD150F1B3EAFA9004B9E1E /* ChooseItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDD150E1B3EAFA9004B9E1E /* ChooseItemViewController.swift */; };
 		7DDD15111B3EB7B8004B9E1E /* ItemDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDD15101B3EB7B8004B9E1E /* ItemDetailTableViewController.swift */; };
 		7DDD15151B3EBDF5004B9E1E /* ItemDetailImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDD15141B3EBDF5004B9E1E /* ItemDetailImageTableViewCell.swift */; };
+		7DDD15171B3EEDEA004B9E1E /* ItemDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDD15161B3EEDEA004B9E1E /* ItemDescriptionTableViewCell.swift */; };
 		C841A2DB822B537C491E3EC5 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 845BBCE0732742CF9824E841 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -46,15 +44,13 @@
 		7D1EA5311B3E6F7A00F273AC /* HungreeeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HungreeeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D1EA5361B3E6F7A00F273AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7D1EA5371B3E6F7A00F273AC /* HungreeeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HungreeeTests.swift; sourceTree = "<group>"; };
-		7D70F57C1B3E78C200A54926 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Person.swift; path = Classes/Models/Person.swift; sourceTree = "<group>"; };
 		7D70F5821B3E79D000A54926 /* ImagelabelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImagelabelView.swift; path = Classes/Views/ImagelabelView.swift; sourceTree = "<group>"; };
-		7D70F5841B3E7A4F00A54926 /* ChoosePersonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChoosePersonViewController.swift; path = Classes/Controllers/ChoosePersonViewController.swift; sourceTree = "<group>"; };
-		7D70F5861B3E7B6300A54926 /* ChoosePersonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChoosePersonView.swift; path = Classes/Views/ChoosePersonView.swift; sourceTree = "<group>"; };
 		7D70F58A1B3E981600A54926 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Item.swift; path = Classes/Models/Item.swift; sourceTree = "<group>"; };
 		7DDD150C1B3EAD6D004B9E1E /* ChooseItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChooseItemView.swift; path = Classes/Views/ChooseItemView.swift; sourceTree = "<group>"; };
 		7DDD150E1B3EAFA9004B9E1E /* ChooseItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChooseItemViewController.swift; path = Classes/Controllers/ChooseItemViewController.swift; sourceTree = "<group>"; };
 		7DDD15101B3EB7B8004B9E1E /* ItemDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemDetailTableViewController.swift; path = Classes/Controllers/ItemDetailTableViewController.swift; sourceTree = "<group>"; };
 		7DDD15141B3EBDF5004B9E1E /* ItemDetailImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemDetailImageTableViewCell.swift; path = Classes/Views/ItemDetail/ItemDetailImageTableViewCell.swift; sourceTree = "<group>"; };
+		7DDD15161B3EEDEA004B9E1E /* ItemDescriptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemDescriptionTableViewCell.swift; path = Classes/Views/ItemDetail/ItemDescriptionTableViewCell.swift; sourceTree = "<group>"; };
 		845BBCE0732742CF9824E841 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -148,7 +144,6 @@
 		7D70F5791B3E77C100A54926 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				7D70F57C1B3E78C200A54926 /* Person.swift */,
 				7D70F58A1B3E981600A54926 /* Item.swift */,
 			);
 			name = Models;
@@ -158,7 +153,6 @@
 			isa = PBXGroup;
 			children = (
 				7DDD15101B3EB7B8004B9E1E /* ItemDetailTableViewController.swift */,
-				7D70F5841B3E7A4F00A54926 /* ChoosePersonViewController.swift */,
 				7DDD150E1B3EAFA9004B9E1E /* ChooseItemViewController.swift */,
 			);
 			name = Controllers;
@@ -169,7 +163,6 @@
 			children = (
 				7DDD15121B3EBD62004B9E1E /* ItemDetail */,
 				7D70F5821B3E79D000A54926 /* ImagelabelView.swift */,
-				7D70F5861B3E7B6300A54926 /* ChoosePersonView.swift */,
 				7DDD150C1B3EAD6D004B9E1E /* ChooseItemView.swift */,
 			);
 			name = Views;
@@ -179,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				7DDD15141B3EBDF5004B9E1E /* ItemDetailImageTableViewCell.swift */,
+				7DDD15161B3EEDEA004B9E1E /* ItemDescriptionTableViewCell.swift */,
 			);
 			name = ItemDetail;
 			sourceTree = "<group>";
@@ -348,15 +342,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D70F5871B3E7B6300A54926 /* ChoosePersonView.swift in Sources */,
 				7DDD15111B3EB7B8004B9E1E /* ItemDetailTableViewController.swift in Sources */,
-				7D70F57D1B3E78C200A54926 /* Person.swift in Sources */,
 				7DDD150D1B3EAD6D004B9E1E /* ChooseItemView.swift in Sources */,
+				7DDD15171B3EEDEA004B9E1E /* ItemDescriptionTableViewCell.swift in Sources */,
 				7DDD150F1B3EAFA9004B9E1E /* ChooseItemViewController.swift in Sources */,
 				7DDD15151B3EBDF5004B9E1E /* ItemDetailImageTableViewCell.swift in Sources */,
 				7D70F5831B3E79D000A54926 /* ImagelabelView.swift in Sources */,
 				7D70F58B1B3E981600A54926 /* Item.swift in Sources */,
-				7D70F5851B3E7A4F00A54926 /* ChoosePersonViewController.swift in Sources */,
 				7D1EA5221B3E6F7A00F273AC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

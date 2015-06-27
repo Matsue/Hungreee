@@ -15,6 +15,7 @@ class ItemDetailTableViewController: UITableViewController {
     
     enum ItemDetailTableViewRows {
         case ItemImageRow
+        case ItemDescriptionRow
         case ItemDetailTableViewRowsCount
     }
     
@@ -28,13 +29,7 @@ class ItemDetailTableViewController: UITableViewController {
         
         if let _item = item {
             title = _item.title as String
-//            itemImageView.sd_setImageWithURL(NSURL(string: item.imageUrl))
         }
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     // MARK: Construction
@@ -61,6 +56,11 @@ class ItemDetailTableViewController: UITableViewController {
             let itemDetailImageTableViewCell = tableView.dequeueReusableCellWithIdentifier("ItemDetailImageTableViewCellID", forIndexPath: indexPath) as! UITableViewCell as? ItemDetailImageTableViewCell
             itemDetailImageTableViewCell?.constructWithItem(item)
             cell = itemDetailImageTableViewCell
+            
+        case ItemDetailTableViewRows.ItemDescriptionRow.hashValue:
+            let itemDescriptionTableViewCell = tableView.dequeueReusableCellWithIdentifier("ItemDescriptionTableViewCellID", forIndexPath: indexPath) as! UITableViewCell as? ItemDescriptionTableViewCell
+            itemDescriptionTableViewCell?.constructWithItem(item)
+            cell = itemDescriptionTableViewCell
             
         default:
             cell = UITableViewCell()

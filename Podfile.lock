@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (1.2.3)
+  - DJWStarRatingView (0.0.4)
   - MDCSwipeToChoose (0.2.2)
   - SDWebImage (3.7.2):
     - SDWebImage/Core (= 3.7.2)
@@ -8,12 +9,14 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 1.2)
+  - DJWStarRatingView
   - MDCSwipeToChoose
   - SDWebImage (~> 3.7)
   - SwiftyJSON (~> 2.2.0)
 
 SPEC CHECKSUMS:
   Alamofire: 5550bf0b575ed1a4bf9be572f9463e1015cc169e
+  DJWStarRatingView: bd8b6f4aaac0d5dbf74c29f7cc3c2c2d4de50abb
   MDCSwipeToChoose: 715aefacd3cc884c448fcdc70638c04a3056408c
   SDWebImage: 71b7cdc1d1721d6a82ed62889030225f2c249e29
   SwiftyJSON: 0b3e6c07af17ff745e77e8e9984097b55c956e5c
