@@ -22,6 +22,7 @@ class ChooseItemViewController: UIViewController, MDCSwipeToChooseDelegate {
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         loadItems()
+        UINavigationBar.appearance().setBackgroundImage(UIImage(named: "hungreee_logo")!.resizableImageWithCapInsets(UIEdgeInsetsMake(0, 0, 0, 0), resizingMode: .Stretch), forBarMetrics: .Default)
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
@@ -31,6 +32,16 @@ class ChooseItemViewController: UIViewController, MDCSwipeToChooseDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let userDefault:NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        //if !userDefault.boolForKey("is_welcomed") {
+            let welcomeVc = WelcomeViewController()
+            self.presentViewController(welcomeVc, animated: true, completion: nil)
+            
+            userDefault.setBool(true, forKey: "is_welcomed")
+            userDefault.synchronize()
+        
+        //}
+        
         showFirstCards()
     }
     
@@ -41,7 +52,7 @@ class ChooseItemViewController: UIViewController, MDCSwipeToChooseDelegate {
     
     // This is called when a user didn't fully swipe left or right.
     func viewDidCancelSwipe(view: UIView) -> Void{
-        println("You couldn't decide on \(self.currentItem()?.title)");
+        println("You couldn't decide on \(self.currentItem()?.title)")
     }
     
     // This is called then a user swipes the view fully left or right.
@@ -55,6 +66,16 @@ class ChooseItemViewController: UIViewController, MDCSwipeToChooseDelegate {
         }
         else{
             println("You liked: \(self.currentItem()?.title)")
+            
+            // Customize animation for pushViewController
+            var transition = CATransition()
+            transition.duration = 0.45
+            transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+            transition.type = kCATransitionMoveIn
+            transition.subtype = kCATransitionFromTop
+            navigationController!.view.layer.addAnimation(transition, forKey: kCATransition)
+            
+            // Open next page
             let itemDetailTableViewController = storyboard?.instantiateViewControllerWithIdentifier("ItemDetailTableViewControllerID") as! ItemDetailTableViewController
             itemDetailTableViewController.constructWithItem(currentItem()!)
             navigationController?.pushViewController(itemDetailTableViewController, animated: true)
@@ -87,7 +108,7 @@ class ChooseItemViewController: UIViewController, MDCSwipeToChooseDelegate {
                 title: "Let's eat together, Humberger",
                 imageUrl: "https://photos-2.dropbox.com/t/2/AAB_bO_M-WgZsfHujRr5SrLZ54OG4xV-2iFhOFicTmLJlw/12/24604400/jpeg/32x32/1/1435413600/0/2/PHOT000000000009A505_500_0.jpg/CPDd3QsgASACIAMgBCAFIAYgBygC/QWvowxvLVbd3Z4dlJaUHZdYtpt8Py_YdH9WlI0b4Giw?size=1280x960&size_mode=2",
                 paybackTypes: ["review"],
-                reviewScore: "5",
+                reviewScore: "4",
                 lat: "35.666851",
                 lng: "139.74955"
             ),
@@ -96,7 +117,7 @@ class ChooseItemViewController: UIViewController, MDCSwipeToChooseDelegate {
                 title: "New menu \"Steak\" at Restaurant \"Meat\"",
                 imageUrl: "https://photos-6.dropbox.com/t/2/AACzTvQ0gdxHyxKJ3Yo-I6Uuai0TH02EqIPVLZBUIPJn6w/12/24604400/jpeg/32x32/1/1435413600/0/2/PHOT000000000011C7B7.jpg/CPDd3QsgASACIAMgBCAFIAYgBygC/GX6OtjaZ0ImEMGWrDzxzTPT3yDs-LCYrsHOBd3bn72k?size=1280x960&size_mode=2",
                 paybackTypes: ["review"],
-                reviewScore: "5",
+                reviewScore: "3",
                 lat: "35.666851",
                 lng: "139.74955"
             ),
@@ -114,7 +135,7 @@ class ChooseItemViewController: UIViewController, MDCSwipeToChooseDelegate {
                 title: "Excellent pizzaaaa!!!",
                 imageUrl: "https://farm6.staticflickr.com/5174/5499265262_094f6db195_q_d.jpg",
                 paybackTypes: ["review"],
-                reviewScore: "5",
+                reviewScore: "2",
                 lat: "35.666851",
                 lng: "139.74955"
             )
@@ -125,7 +146,7 @@ class ChooseItemViewController: UIViewController, MDCSwipeToChooseDelegate {
     
     func popItemViewWithFrame(frame:CGRect) -> ChooseItemView? {
         if(items.count == 0) {
-            return nil;
+            return nil
         }
         
         // UIView+MDCSwipeToChoose and MDCSwipeToChooseView are heavily customizable.
@@ -173,11 +194,13 @@ class ChooseItemViewController: UIViewController, MDCSwipeToChooseDelegate {
         self.items = defaultItems()
     }
     
-    private func layoutButtonsIfNeeded
-        () {
+    private func layoutButtonsIfNeeded() {
         if backCardView == nil {
             nopeButton.hidden = true
             likeButton.hidden = true
+        } else {
+            nopeButton.hidden = false
+            likeButton.hidden = false
         }
     }
     
@@ -211,6 +234,7 @@ class ChooseItemViewController: UIViewController, MDCSwipeToChooseDelegate {
     @IBAction func reloadItems(sender: UIButton) {
         loadItems()
         showFirstCards()
+        layoutButtonsIfNeeded()
     }
     
 }
