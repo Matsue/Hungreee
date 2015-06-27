@@ -1,0 +1,424 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7D1EA5221B3E6F7A00F273AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1EA5211B3E6F7A00F273AC /* AppDelegate.swift */; };
+		7D1EA5241B3E6F7A00F273AC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1EA5231B3E6F7A00F273AC /* ViewController.swift */; };
+		7D1EA5271B3E6F7A00F273AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D1EA5251B3E6F7A00F273AC /* Main.storyboard */; };
+		7D1EA5291B3E6F7A00F273AC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D1EA5281B3E6F7A00F273AC /* Images.xcassets */; };
+		7D1EA52C1B3E6F7A00F273AC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D1EA52A1B3E6F7A00F273AC /* LaunchScreen.xib */; };
+		7D1EA5381B3E6F7A00F273AC /* HungreeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1EA5371B3E6F7A00F273AC /* HungreeeTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7D1EA5321B3E6F7A00F273AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7D1EA5141B3E6F7A00F273AC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7D1EA51B1B3E6F7A00F273AC;
+			remoteInfo = Hungreee;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7D1EA51C1B3E6F7A00F273AC /* Hungreee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hungreee.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D1EA5201B3E6F7A00F273AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D1EA5211B3E6F7A00F273AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7D1EA5231B3E6F7A00F273AC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7D1EA5261B3E6F7A00F273AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7D1EA5281B3E6F7A00F273AC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		7D1EA52B1B3E6F7A00F273AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		7D1EA5311B3E6F7A00F273AC /* HungreeeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HungreeeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D1EA5361B3E6F7A00F273AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D1EA5371B3E6F7A00F273AC /* HungreeeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HungreeeTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7D1EA5191B3E6F7A00F273AC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D1EA52E1B3E6F7A00F273AC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7D1EA5131B3E6F7A00F273AC = {
+			isa = PBXGroup;
+			children = (
+				7D1EA51E1B3E6F7A00F273AC /* Hungreee */,
+				7D1EA5341B3E6F7A00F273AC /* HungreeeTests */,
+				7D1EA51D1B3E6F7A00F273AC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7D1EA51D1B3E6F7A00F273AC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7D1EA51C1B3E6F7A00F273AC /* Hungreee.app */,
+				7D1EA5311B3E6F7A00F273AC /* HungreeeTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7D1EA51E1B3E6F7A00F273AC /* Hungreee */ = {
+			isa = PBXGroup;
+			children = (
+				7D1EA5211B3E6F7A00F273AC /* AppDelegate.swift */,
+				7D1EA5231B3E6F7A00F273AC /* ViewController.swift */,
+				7D1EA5251B3E6F7A00F273AC /* Main.storyboard */,
+				7D1EA5281B3E6F7A00F273AC /* Images.xcassets */,
+				7D1EA52A1B3E6F7A00F273AC /* LaunchScreen.xib */,
+				7D1EA51F1B3E6F7A00F273AC /* Supporting Files */,
+			);
+			path = Hungreee;
+			sourceTree = "<group>";
+		};
+		7D1EA51F1B3E6F7A00F273AC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7D1EA5201B3E6F7A00F273AC /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7D1EA5341B3E6F7A00F273AC /* HungreeeTests */ = {
+			isa = PBXGroup;
+			children = (
+				7D1EA5371B3E6F7A00F273AC /* HungreeeTests.swift */,
+				7D1EA5351B3E6F7A00F273AC /* Supporting Files */,
+			);
+			path = HungreeeTests;
+			sourceTree = "<group>";
+		};
+		7D1EA5351B3E6F7A00F273AC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7D1EA5361B3E6F7A00F273AC /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7D1EA51B1B3E6F7A00F273AC /* Hungreee */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D1EA53B1B3E6F7A00F273AC /* Build configuration list for PBXNativeTarget "Hungreee" */;
+			buildPhases = (
+				7D1EA5181B3E6F7A00F273AC /* Sources */,
+				7D1EA5191B3E6F7A00F273AC /* Frameworks */,
+				7D1EA51A1B3E6F7A00F273AC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Hungreee;
+			productName = Hungreee;
+			productReference = 7D1EA51C1B3E6F7A00F273AC /* Hungreee.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7D1EA5301B3E6F7A00F273AC /* HungreeeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D1EA53E1B3E6F7A00F273AC /* Build configuration list for PBXNativeTarget "HungreeeTests" */;
+			buildPhases = (
+				7D1EA52D1B3E6F7A00F273AC /* Sources */,
+				7D1EA52E1B3E6F7A00F273AC /* Frameworks */,
+				7D1EA52F1B3E6F7A00F273AC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7D1EA5331B3E6F7A00F273AC /* PBXTargetDependency */,
+			);
+			name = HungreeeTests;
+			productName = HungreeeTests;
+			productReference = 7D1EA5311B3E6F7A00F273AC /* HungreeeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7D1EA5141B3E6F7A00F273AC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = Hungreee;
+				TargetAttributes = {
+					7D1EA51B1B3E6F7A00F273AC = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
+					7D1EA5301B3E6F7A00F273AC = {
+						CreatedOnToolsVersion = 6.3.2;
+						TestTargetID = 7D1EA51B1B3E6F7A00F273AC;
+					};
+				};
+			};
+			buildConfigurationList = 7D1EA5171B3E6F7A00F273AC /* Build configuration list for PBXProject "Hungreee" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7D1EA5131B3E6F7A00F273AC;
+			productRefGroup = 7D1EA51D1B3E6F7A00F273AC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7D1EA51B1B3E6F7A00F273AC /* Hungreee */,
+				7D1EA5301B3E6F7A00F273AC /* HungreeeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7D1EA51A1B3E6F7A00F273AC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D1EA5271B3E6F7A00F273AC /* Main.storyboard in Resources */,
+				7D1EA52C1B3E6F7A00F273AC /* LaunchScreen.xib in Resources */,
+				7D1EA5291B3E6F7A00F273AC /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D1EA52F1B3E6F7A00F273AC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7D1EA5181B3E6F7A00F273AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D1EA5241B3E6F7A00F273AC /* ViewController.swift in Sources */,
+				7D1EA5221B3E6F7A00F273AC /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D1EA52D1B3E6F7A00F273AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D1EA5381B3E6F7A00F273AC /* HungreeeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7D1EA5331B3E6F7A00F273AC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7D1EA51B1B3E6F7A00F273AC /* Hungreee */;
+			targetProxy = 7D1EA5321B3E6F7A00F273AC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7D1EA5251B3E6F7A00F273AC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7D1EA5261B3E6F7A00F273AC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7D1EA52A1B3E6F7A00F273AC /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7D1EA52B1B3E6F7A00F273AC /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7D1EA5391B3E6F7A00F273AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7D1EA53A1B3E6F7A00F273AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7D1EA53C1B3E6F7A00F273AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Hungreee/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		7D1EA53D1B3E6F7A00F273AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Hungreee/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		7D1EA53F1B3E6F7A00F273AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = HungreeeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hungreee.app/Hungreee";
+			};
+			name = Debug;
+		};
+		7D1EA5401B3E6F7A00F273AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = HungreeeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hungreee.app/Hungreee";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7D1EA5171B3E6F7A00F273AC /* Build configuration list for PBXProject "Hungreee" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D1EA5391B3E6F7A00F273AC /* Debug */,
+				7D1EA53A1B3E6F7A00F273AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7D1EA53B1B3E6F7A00F273AC /* Build configuration list for PBXNativeTarget "Hungreee" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D1EA53C1B3E6F7A00F273AC /* Debug */,
+				7D1EA53D1B3E6F7A00F273AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7D1EA53E1B3E6F7A00F273AC /* Build configuration list for PBXNativeTarget "HungreeeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D1EA53F1B3E6F7A00F273AC /* Debug */,
+				7D1EA5401B3E6F7A00F273AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7D1EA5141B3E6F7A00F273AC /* Project object */;
+}
