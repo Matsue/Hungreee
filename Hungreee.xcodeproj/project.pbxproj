@@ -233,6 +233,11 @@
 				TargetAttributes = {
 					7D1EA51B1B3E6F7A00F273AC = {
 						CreatedOnToolsVersion = 6.3.2;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					7D1EA5301B3E6F7A00F273AC = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -468,9 +473,12 @@
 			baseConfigurationReference = 3855345B0B7979ECB246CDA3 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development IOS Push Services: com.example.Hungreee";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development IOS Push Services: com.example.Hungreee";
 				INFOPLIST_FILE = Hungreee/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "0ac1e128-ed63-45bc-93f1-29b116b86e21";
 			};
 			name = Debug;
 		};
