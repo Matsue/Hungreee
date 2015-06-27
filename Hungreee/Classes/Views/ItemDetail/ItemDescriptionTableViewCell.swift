@@ -1,5 +1,5 @@
 //
-//  ItemDescriptionTableViewCell.swift
+//  ItemDetailDescriptionTableViewCell.swift
 //  Hungreee
 //
 //  Created by Hiroki Matsue on 6/27/15.
@@ -9,7 +9,7 @@
 import UIKit
 import DJWStarRatingView
 
-class ItemDescriptionTableViewCell: UITableViewCell {
+class ItemDetailDescriptionTableViewCell: UITableViewCell {
 
     @IBOutlet weak private(set) var titleLabel: UILabel!
     @IBOutlet weak private(set) var subtitleLabel: UILabel!

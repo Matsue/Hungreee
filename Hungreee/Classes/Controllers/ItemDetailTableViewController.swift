@@ -58,7 +58,7 @@ class ItemDetailTableViewController: UITableViewController {
             cell = itemDetailImageTableViewCell
             
         case ItemDetailTableViewRows.ItemDescriptionRow.hashValue:
-            let itemDescriptionTableViewCell = tableView.dequeueReusableCellWithIdentifier("ItemDescriptionTableViewCellID", forIndexPath: indexPath) as! UITableViewCell as? ItemDescriptionTableViewCell
+            let itemDescriptionTableViewCell = tableView.dequeueReusableCellWithIdentifier("ItemDetailDescriptionTableViewCellID", forIndexPath: indexPath) as! UITableViewCell as? ItemDetailDescriptionTableViewCell
             itemDescriptionTableViewCell?.constructWithItem(item)
             cell = itemDescriptionTableViewCell
             
