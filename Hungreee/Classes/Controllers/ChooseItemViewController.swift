@@ -69,9 +69,9 @@ class ChooseItemViewController: UIViewController, MDCSwipeToChooseDelegate {
         }
         else{
             println("You liked: \(self.currentItem.title)")
-            let itemDetailViewController = storyboard?.instantiateViewControllerWithIdentifier("ItemDetailViewControllerID") as! ItemDetailViewController
-            itemDetailViewController.configureWithItem(currentItem)
-            navigationController?.pushViewController(itemDetailViewController, animated: true)
+            let itemDetailTableViewController = storyboard?.instantiateViewControllerWithIdentifier("ItemDetailTableViewControllerID") as! ItemDetailTableViewController
+            itemDetailTableViewController.constructWithItem(currentItem)
+            navigationController?.pushViewController(itemDetailTableViewController, animated: true)
         }
         
         // MDCSwipeToChooseView removes the view from the view hierarchy
