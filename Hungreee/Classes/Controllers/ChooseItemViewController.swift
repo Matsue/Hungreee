@@ -22,7 +22,6 @@ class ChooseItemViewController: UIViewController, MDCSwipeToChooseDelegate {
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         loadItems()
-        UINavigationBar.appearance().setBackgroundImage(UIImage(named: "hungreee_logo")!.resizableImageWithCapInsets(UIEdgeInsetsMake(0, 0, 0, 0), resizingMode: .Stretch), forBarMetrics: .Default)
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
@@ -33,6 +32,20 @@ class ChooseItemViewController: UIViewController, MDCSwipeToChooseDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         showFirstCards()
+        
+        // Navigation background color
+        navigationController?.navigationBar.barTintColor = UIColor(red: 255.0/255.0, green: 204.0/255.0, blue: 0.0/255.0, alpha: 1.0);
+        navigationController?.navigationBar.translucent = false;
+        
+        // Logo in navigation bar
+        // TODO: Regenerate good size logo
+        var image = UIImage(named: "hungreee_logo")!.resizableImageWithCapInsets(UIEdgeInsetsMake(0, 0, 0, 0), resizingMode: .Stretch)
+        let newSize = CGSizeMake(view.frame.width, navigationController!.navigationBar.frame.height)
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0)
+        image.drawInRect(CGRectMake(70.0, 0, newSize.width - 140.0, newSize.height))
+        image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        navigationController?.navigationBar.addSubview(UIImageView(image: image))
     }
     
     func suportedInterfaceOrientations() -> UIInterfaceOrientationMask{
