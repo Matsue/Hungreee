@@ -11,11 +11,14 @@ import SDWebImage
 
 class ItemDetailTableViewController: UITableViewController {
     
-    var item: Item!
+    private var item: Item!
+    private var itemDescriptionTableViewCell: ItemDetailDescriptionTableViewCell!
+    private var itemDetailPaymentsTableViewCell: ItemDetailPaymentsTableViewCell!
     
     enum ItemDetailTableViewRows {
         case ItemImageRow
         case ItemDescriptionRow
+        case ItemPaymentsRow
         case ItemDetailTableViewRowsCount
     }
     
@@ -26,10 +29,6 @@ class ItemDetailTableViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
-        if let _item = item {
-            title = _item.title as String
-        }
     }
     
     // MARK: Construction
@@ -53,14 +52,15 @@ class ItemDetailTableViewController: UITableViewController {
         
         switch indexPath.row {
         case ItemDetailTableViewRows.ItemImageRow.hashValue:
-            let itemDetailImageTableViewCell = tableView.dequeueReusableCellWithIdentifier("ItemDetailImageTableViewCellID", forIndexPath: indexPath) as! UITableViewCell as? ItemDetailImageTableViewCell
+            let itemDetailImageTableViewCell = tableView.dequeueReusableCellWithIdentifier("ItemDetailImageTableViewCellID", forIndexPath: indexPath) as? ItemDetailImageTableViewCell
             itemDetailImageTableViewCell?.constructWithItem(item)
             cell = itemDetailImageTableViewCell
             
         case ItemDetailTableViewRows.ItemDescriptionRow.hashValue:
-            let itemDescriptionTableViewCell = tableView.dequeueReusableCellWithIdentifier("ItemDetailDescriptionTableViewCellID", forIndexPath: indexPath) as! UITableViewCell as? ItemDetailDescriptionTableViewCell
-            itemDescriptionTableViewCell?.constructWithItem(item)
-            cell = itemDescriptionTableViewCell
+            cell = createItemDescriptionTableViewCellIfNeeded(item)
+            
+        case ItemDetailTableViewRows.ItemPaymentsRow.hashValue:
+            cell = createItemDetailPaymentsTableViewCellIfNeeded(item)
             
         default:
             cell = UITableViewCell()
@@ -76,11 +76,39 @@ class ItemDetailTableViewController: UITableViewController {
         case ItemDetailTableViewRows.ItemImageRow.hashValue:
             height = view.frame.width / 2
             
+        case ItemDetailTableViewRows.ItemDescriptionRow.hashValue:
+            // TODO: Calculate height dynamically
+//            height = createItemDescriptionTableViewCellIfNeeded(item).frame.height
+            height = 116
+            
+        case ItemDetailTableViewRows.ItemPaymentsRow.hashValue:
+            // TODO: Calculate height dynamically
+//            height = createItemDetailPaymentsTableViewCellIfNeeded(item).frame.height
+            height = 104
+            
         default:
-            height = 0
+            height = CGFloat.min
         }
         
         return height
+    }
+    
+    private func createItemDescriptionTableViewCellIfNeeded(item: Item) -> ItemDetailDescriptionTableViewCell {
+        if itemDescriptionTableViewCell == nil {
+            itemDescriptionTableViewCell = tableView.dequeueReusableCellWithIdentifier("ItemDetailDescriptionTableViewCellID") as? ItemDetailDescriptionTableViewCell
+            itemDescriptionTableViewCell?.constructWithItem(item)
+        }
+        
+        return itemDescriptionTableViewCell;
+    }
+    
+    private func createItemDetailPaymentsTableViewCellIfNeeded(item: Item) -> ItemDetailPaymentsTableViewCell {
+        if itemDetailPaymentsTableViewCell == nil {
+            itemDetailPaymentsTableViewCell = tableView.dequeueReusableCellWithIdentifier("ItemDetailPaymentsTableViewCellID") as? ItemDetailPaymentsTableViewCell
+            itemDetailPaymentsTableViewCell?.constructWithItem(item)
+        }
+        
+        return itemDetailPaymentsTableViewCell;
     }
 
     /*

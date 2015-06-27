@@ -22,6 +22,7 @@ class ChooseItemViewController: UIViewController, MDCSwipeToChooseDelegate {
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         loadItems()
+        UINavigationBar.appearance().setBackgroundImage(UIImage(named: "hungreee_logo")!.resizableImageWithCapInsets(UIEdgeInsetsMake(0, 0, 0, 0), resizingMode: .Stretch), forBarMetrics: .Default)
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
