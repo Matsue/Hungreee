@@ -1,5 +1,5 @@
 //
-//  ChoosePersonView.swift
+//  ChooseItemView.swift
 //  Hungreee
 //
 //  Created by Hiroki Matsue on 6/27/15.
@@ -8,29 +8,25 @@
 
 import UIKit
 import MDCSwipeToChoose
+import SDWebImage
 
-class ChoosePersonView: MDCSwipeToChooseView {
+class ChooseItemView: MDCSwipeToChooseView {
     
-    let ChoosePersonViewImageLabelWidth:CGFloat = 42.0;
-    var person: Person!
+    let ChooseItemViewImageLabelWidth:CGFloat = 42.0;
+    var item: Item!
     var informationView: UIView!
     var nameLabel: UILabel!
     var carmeraImageLabelView:ImagelabelView!
     var interestsImageLabelView: ImagelabelView!
     var friendsImageLabelView: ImagelabelView!
     
-    init(frame: CGRect, person: Person, options: MDCSwipeToChooseViewOptions) {
-    
+    required init(frame: CGRect, item: Item, options: MDCSwipeToChooseViewOptions) {
         super.init(frame: frame, options: options)
-        self.person = person
         
-        if let image = self.person.Image {
-            self.imageView.image = image
-        }
-        
+        self.item = item
+        self.imageView.sd_setImageWithURL(NSURL(string: item.imageUrl))
         self.autoresizingMask = UIViewAutoresizing.FlexibleHeight | UIViewAutoresizing.FlexibleWidth
         UIViewAutoresizing.FlexibleBottomMargin
-        
         self.imageView.autoresizingMask = self.autoresizingMask
         constructInformationView()
     }
@@ -42,14 +38,14 @@ class ChoosePersonView: MDCSwipeToChooseView {
     func constructInformationView() -> Void{
         var bottomHeight:CGFloat = 60.0
         var bottomFrame:CGRect = CGRectMake(0,
-            CGRectGetHeight(self.bounds) - bottomHeight,
-            CGRectGetWidth(self.bounds),
+            CGRectGetHeight(bounds) - bottomHeight,
+            CGRectGetWidth(bounds),
             bottomHeight);
-        self.informationView = UIView(frame:bottomFrame)
-        self.informationView.backgroundColor = UIColor.whiteColor()
-        self.informationView.clipsToBounds = true
-        self.informationView.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleTopMargin
-        self.addSubview(self.informationView)
+        informationView = UIView(frame:bottomFrame)
+        informationView.backgroundColor = UIColor.whiteColor()
+        informationView.clipsToBounds = true
+        informationView.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleTopMargin
+        addSubview(informationView)
         constructNameLabel()
         constructCameraImageLabelView()
         constructInterestsImageLabelView()
@@ -61,23 +57,23 @@ class ChoosePersonView: MDCSwipeToChooseView {
         var topPadding:CGFloat = 17.0
         var frame:CGRect = CGRectMake(leftPadding,
             topPadding,
-            floor(CGRectGetWidth(self.informationView.frame)/2),
-            CGRectGetHeight(self.informationView.frame) - topPadding)
-        self.nameLabel = UILabel(frame:frame)
-        self.nameLabel.text = "\(person.Name), \(person.Age)"
-        self.informationView .addSubview(self.nameLabel)
+            floor(CGRectGetWidth(informationView.frame)/2),
+            CGRectGetHeight(informationView.frame) - topPadding)
+        nameLabel = UILabel(frame:frame)
+        nameLabel.text = item.title
+        informationView .addSubview(nameLabel)
     }
     
     func constructCameraImageLabelView() -> Void {
         var rightPadding:CGFloat = 10.0
         var image:UIImage = UIImage(named:"camera")!
-        self.carmeraImageLabelView = buildImageLabelViewLeftOf(CGRectGetWidth(self.informationView.bounds), image:image, text:person.NumberOfPhotos.stringValue)
-        self.informationView.addSubview(self.carmeraImageLabelView)
+        carmeraImageLabelView = buildImageLabelViewLeftOf(CGRectGetWidth(informationView.bounds), image:image, text:"0")
+        informationView.addSubview(carmeraImageLabelView)
     }
     
     func constructInterestsImageLabelView() -> Void {
         var image: UIImage = UIImage(named: "book")!
-        self.interestsImageLabelView = self.buildImageLabelViewLeftOf(CGRectGetMinX(self.carmeraImageLabelView.frame), image: image, text:person.NumberOfPhotos.stringValue)
+        self.interestsImageLabelView = self.buildImageLabelViewLeftOf(CGRectGetMinX(self.carmeraImageLabelView.frame), image: image, text:"0")
         self.informationView.addSubview(self.interestsImageLabelView)
     }
     
@@ -88,11 +84,12 @@ class ChoosePersonView: MDCSwipeToChooseView {
     }
     
     func buildImageLabelViewLeftOf(x:CGFloat, image:UIImage, text:String) -> ImagelabelView {
-        var frame:CGRect = CGRect(x:x-ChoosePersonViewImageLabelWidth, y: 0,
-            width: ChoosePersonViewImageLabelWidth,
+        var frame:CGRect = CGRect(x:x-ChooseItemViewImageLabelWidth, y: 0,
+            width: ChooseItemViewImageLabelWidth,
             height: CGRectGetHeight(self.informationView.bounds))
         var view:ImagelabelView = ImagelabelView(frame:frame, image:image, text:text)
         view.autoresizingMask = UIViewAutoresizing.FlexibleLeftMargin
         return view
     }
+    
 }

@@ -9,6 +9,7 @@
 import UIKit
 
 class Person: NSObject, Printable {
+    
     let Name: NSString
     let Image: UIImage!
     let Age: NSNumber
@@ -28,4 +29,5 @@ class Person: NSObject, Printable {
         self.NumberOfSharedInterests = sharedInterest ?? 0
         self.NumberOfPhotos = photos ?? 0
     }
+    
 }

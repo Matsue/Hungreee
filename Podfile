@@ -6,6 +6,8 @@ use_frameworks!
 pod 'Alamofire', '~> 1.2'
 # https://github.com/modocache/MDCSwipeToChoose
 pod "MDCSwipeToChoose"
+# https://github.com/rs/SDWebImage
+pod 'SDWebImage', '~>3.7'
 
 target 'Hungreee' do
 end
