@@ -16,9 +16,51 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tb2-qF-hRE">
+                                <rect key="frame" x="187" y="506" width="50" height="50"/>
+                                <state key="normal" image="nope">
+                                    <color key="titleColor" red="0.96862745098039216" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="nopeFrontCardView:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="wsg-H3-98z"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fc7-C1-Wm3">
+                                <rect key="frame" x="363" y="506" width="50" height="50"/>
+                                <state key="normal" image="liked">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="likeFrontCardView:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="2dy-ah-5hj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yjw-Yu-SxB">
+                                <rect key="frame" x="210" y="285" width="180" height="30"/>
+                                <state key="normal" title="Show me more foooods!!!!">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="reloadItems:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="d8S-0B-XEf"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="yjw-Yu-SxB" secondAttribute="centerY" id="EcK-7K-xFV"/>
+                            <constraint firstItem="Fc7-C1-Wm3" firstAttribute="centerY" secondItem="Tb2-qF-hRE" secondAttribute="centerY" id="F3U-gg-QSU"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Tb2-qF-hRE" secondAttribute="bottom" constant="44" id="HhG-tY-i0p"/>
+                            <constraint firstAttribute="centerX" secondItem="Tb2-qF-hRE" secondAttribute="centerX" constant="88" id="QCs-cZ-Wfi"/>
+                            <constraint firstAttribute="centerX" secondItem="yjw-Yu-SxB" secondAttribute="centerX" id="j4m-Np-auM"/>
+                            <constraint firstAttribute="centerX" secondItem="Fc7-C1-Wm3" secondAttribute="centerX" constant="-88" id="qcM-ce-lg9"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="1vC-uz-gjm"/>
+                    <connections>
+                        <outlet property="likeButton" destination="Fc7-C1-Wm3" id="TFS-pm-7hv"/>
+                        <outlet property="nopeButton" destination="Tb2-qF-hRE" id="Sbp-1v-XdF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
@@ -39,16 +81,16 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HUG-Mp-Aqa">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                            <rect key="frame" x="125" y="0.0" width="350" height="350"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="HUG-Mp-Aqa" secondAttribute="height" multiplier="1:1" id="Ivk-W4-Mmp"/>
                                             </constraints>
                                         </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="HUG-Mp-Aqa" firstAttribute="leading" secondItem="RmY-l1-Vh9" secondAttribute="leading" id="2g9-8C-43l"/>
-                                        <constraint firstItem="HUG-Mp-Aqa" firstAttribute="top" secondItem="RmY-l1-Vh9" secondAttribute="top" id="atl-ah-jgu"/>
-                                        <constraint firstAttribute="trailing" secondItem="HUG-Mp-Aqa" secondAttribute="trailing" id="orY-ev-IQe"/>
+                                        <constraint firstAttribute="bottom" secondItem="HUG-Mp-Aqa" secondAttribute="bottom" id="Oj1-lu-C8x"/>
+                                        <constraint firstAttribute="centerX" secondItem="HUG-Mp-Aqa" secondAttribute="centerX" id="sK5-96-ZSu"/>
+                                        <constraint firstItem="HUG-Mp-Aqa" firstAttribute="top" secondItem="RmY-l1-Vh9" secondAttribute="top" id="x4l-6y-LZn"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -85,4 +127,8 @@
             <point key="canvasLocation" x="-204" y="51"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="liked" width="50" height="50"/>
+        <image name="nope" width="50" height="50"/>
+    </resources>
 </document>
