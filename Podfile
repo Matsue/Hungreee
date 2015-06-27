@@ -9,6 +9,9 @@ pod "MDCSwipeToChoose"
 # https://github.com/rs/SDWebImage
 pod 'SDWebImage', '~>3.7'
 
+# https://github.com/SwiftyJSON/SwiftyJSON
+pod 'SwiftyJSON', '~> 2.2.0'
+
 target 'Hungreee' do
 end
 

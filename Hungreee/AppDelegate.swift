@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        var types: UIUserNotificationType = UIUserNotificationType.Badge |
+            UIUserNotificationType.Alert |
+            UIUserNotificationType.Sound
+        
+        
+        var settings: UIUserNotificationSettings = UIUserNotificationSettings( forTypes: types, categories: nil )
+        
+        application.registerUserNotificationSettings( settings )
+        application.registerForRemoteNotifications()
+        
         return true
     }
 
@@ -41,6 +53,53 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    func application( application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData ) {
+        var characterSet: NSCharacterSet = NSCharacterSet( charactersInString: "<>" )
+        
+        var deviceTokenString: String = ( deviceToken.description as NSString )
+            .stringByTrimmingCharactersInSet( characterSet )
+            .stringByReplacingOccurrencesOfString( " ", withString: "" ) as String
+        
+        println( deviceTokenString )
+    }
+    
+    //RemotePush通知取得関数
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
+        
+        println(userInfo)
+        
+        // 一旦ノーティフィケーション全削除
+        application.cancelAllLocalNotifications()
+        
+        //userInfoにはサーバー側で記述した"apns_payload"が格納されている
+        let json = JSON(userInfo)
+        
+        let state:UIApplicationState = application.applicationState;
+        if (state == .Inactive || state == .Background) {
+            let notification = UILocalNotification()
+            notification.timeZone = NSCalendar.currentCalendar().timeZone
+            notification.alertBody = json["other_data", "title"].stringValue;
+            notification.hasAction = true
+            application.presentLocalNotificationNow(notification)
+        } else {
+            let notification = NSNotification(
+                name:"hungreee_work",
+                object: self,
+                userInfo:[
+                    "title": json["other_data", "title"].stringValue,
+                    "image_url":json["other_data", "image_url"].stringValue,
+                    "lat":json["other_data", "lat"].doubleValue,
+                    "lng":json["other_data", "lng"].doubleValue,
+                    "review_avg":json["other_data", "review_avg"].intValue,
+                    "work":json["other_data", "work"].stringValue
+                ]
+
+            )
+            NSNotificationCenter.defaultCenter().postNotification(notification)
+        }
+
+        completionHandler(.NoData)
+    }
 
 }
 
