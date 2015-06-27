@@ -27,6 +27,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         application.registerUserNotificationSettings( settings )
         application.registerForRemoteNotifications()
+
+
+        
         
         return true
     }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6DDFCA7A1B3F2BB10083F898 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DDFCA791B3F2BB10083F898 /* WelcomeViewController.swift */; };
 		7D1EA5221B3E6F7A00F273AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1EA5211B3E6F7A00F273AC /* AppDelegate.swift */; };
 		7D1EA5271B3E6F7A00F273AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D1EA5251B3E6F7A00F273AC /* Main.storyboard */; };
 		7D1EA5291B3E6F7A00F273AC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D1EA5281B3E6F7A00F273AC /* Images.xcassets */; };
@@ -35,6 +36,7 @@
 /* Begin PBXFileReference section */
 		0A6FD48152DC2E7F5EBACC62 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		3855345B0B7979ECB246CDA3 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		6DDFCA791B3F2BB10083F898 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		7D1EA51C1B3E6F7A00F273AC /* Hungreee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hungreee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D1EA5201B3E6F7A00F273AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7D1EA5211B3E6F7A00F273AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 			children = (
 				7DDD15101B3EB7B8004B9E1E /* ItemDetailTableViewController.swift */,
 				7DDD150E1B3EAFA9004B9E1E /* ChooseItemViewController.swift */,
+				6DDFCA791B3F2BB10083F898 /* WelcomeViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DDFCA7A1B3F2BB10083F898 /* WelcomeViewController.swift in Sources */,
 				7DDD15111B3EB7B8004B9E1E /* ItemDetailTableViewController.swift in Sources */,
 				7DDD150D1B3EAD6D004B9E1E /* ChooseItemView.swift in Sources */,
 				7DDD15171B3EEDEA004B9E1E /* ItemDescriptionTableViewCell.swift in Sources */,

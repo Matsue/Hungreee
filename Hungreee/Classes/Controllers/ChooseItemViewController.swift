@@ -31,6 +31,16 @@ class ChooseItemViewController: UIViewController, MDCSwipeToChooseDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let userDefault:NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        //if !userDefault.boolForKey("is_welcomed") {
+            let welcomeVc = WelcomeViewController()
+            self.presentViewController(welcomeVc, animated: true, completion: nil)
+            
+            userDefault.setBool(true, forKey: "is_welcomed")
+            userDefault.synchronize()
+        
+        //}
+        
         showFirstCards()
     }
     

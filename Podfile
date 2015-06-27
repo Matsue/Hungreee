@@ -12,6 +12,7 @@ pod 'DJWStarRatingView'
 
 # https://github.com/SwiftyJSON/SwiftyJSON
 pod 'SwiftyJSON', '~> 2.2.0'
+pod 'EAIntroView', '~> 2.7.0'
 
 target 'Hungreee' do
 end
