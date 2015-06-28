@@ -101,10 +101,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 ]
             )
 
-            //NSNotificationCenter.defaultCenter().postNotification(notification)
+            NSNotificationCenter.defaultCenter().postNotification(notification)
 
-            let queue: NSNotificationQueue = NSNotificationQueue.defaultQueue()
-            queue.enqueueNotification(notification, postingStyle: NSPostingStyle.PostASAP)
+            //let queue: NSNotificationQueue = NSNotificationQueue.defaultQueue()
+            //queue.enqueueNotification(notification, postingStyle: NSPostingStyle.PostASAP)
             
         }
 

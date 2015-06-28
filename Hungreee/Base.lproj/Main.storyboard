@@ -54,19 +54,29 @@
                                     <action selector="reloadItems:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="d8S-0B-XEf"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home" translatesAutoresizingMaskIntoConstraints="NO" id="5c7-Cc-WB6">
+                                <rect key="frame" x="528" y="72" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="LCL-7V-hhg"/>
+                                    <constraint firstAttribute="width" constant="40" id="W3S-H0-UMK"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="yjw-Yu-SxB" secondAttribute="centerY" id="EcK-7K-xFV"/>
                             <constraint firstItem="Fc7-C1-Wm3" firstAttribute="centerY" secondItem="Tb2-qF-hRE" secondAttribute="centerY" id="F3U-gg-QSU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5c7-Cc-WB6" secondAttribute="trailing" constant="16" id="Grl-me-WNj"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Tb2-qF-hRE" secondAttribute="bottom" constant="44" id="HhG-tY-i0p"/>
                             <constraint firstAttribute="centerX" secondItem="Tb2-qF-hRE" secondAttribute="centerX" constant="88" id="QCs-cZ-Wfi"/>
                             <constraint firstAttribute="centerX" secondItem="yjw-Yu-SxB" secondAttribute="centerX" id="j4m-Np-auM"/>
                             <constraint firstAttribute="centerX" secondItem="Fc7-C1-Wm3" secondAttribute="centerX" constant="-88" id="qcM-ce-lg9"/>
+                            <constraint firstItem="5c7-Cc-WB6" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="u36-jC-16k"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="1vC-uz-gjm"/>
                     <connections>
+                        <outlet property="homeButton" destination="5c7-Cc-WB6" id="s0e-ee-5er"/>
                         <outlet property="likeButton" destination="Fc7-C1-Wm3" id="TFS-pm-7hv"/>
                         <outlet property="nopeButton" destination="Tb2-qF-hRE" id="Sbp-1v-XdF"/>
                     </connections>
@@ -376,6 +386,7 @@
         <image name="dollar_white" width="526" height="524"/>
         <image name="dollar_yellow" width="628" height="502"/>
         <image name="eat" width="479" height="481"/>
+        <image name="home" width="73" height="70"/>
         <image name="noteat" width="490" height="490"/>
         <image name="review_white" width="659" height="562"/>
         <image name="review_yellow" width="667" height="573"/>

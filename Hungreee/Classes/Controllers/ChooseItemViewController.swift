@@ -17,8 +17,10 @@ class ChooseItemViewController: UIViewController, MDCSwipeToChooseDelegate {
     var items: [Item] = []
     var frontCardView: ChooseItemView!
     var backCardView: ChooseItemView!
+    var numHub: RKNotificationHub!
     @IBOutlet weak var nopeButton: UIButton!
     @IBOutlet weak var likeButton: UIButton!
+    @IBOutlet weak var homeButton: UIImageView!
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -54,19 +56,14 @@ class ChooseItemViewController: UIViewController, MDCSwipeToChooseDelegate {
         navigationController?.navigationBar.addSubview(UIImageView(image: image))
         
         // latest numbers
+        numHub = RKNotificationHub(view: homeButton)
         
-        var numHub: RKNotificationHub = RKNotificationHub(view: self.view)
-        numHub.increment()
-        
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        // set observer
-        print("adding notification")
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "handlePushNotification:", name: "hungreeework", object: nil)
+        
     }
+
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewDidDisappear(animated: Bool) {
         print("removing observer")
 
         NSNotificationCenter.defaultCenter().removeObserver(self)
@@ -74,6 +71,9 @@ class ChooseItemViewController: UIViewController, MDCSwipeToChooseDelegate {
     
     // observer fired
     func handlePushNotification(notification: NSNotification) {
+        numHub.increment()
+        numHub.bump()
+        
         print("Remote Push Received!!")
         print(notification.userInfo)
         let works = notification.userInfo!["work"] as! String
@@ -108,12 +108,15 @@ class ChooseItemViewController: UIViewController, MDCSwipeToChooseDelegate {
     func view(view: UIView, wasChosenWithDirection: MDCSwipeDirection) -> Void {
         layoutButtonsIfNeeded()
         
+        // decrement numHbu!!
+        numHub.decrement()
+        
         // MDCSwipeToChooseView shows "NOPE" on swipes to the left,
         // and "LIKED" on swipes to the right.
         if(wasChosenWithDirection == MDCSwipeDirection.Left){
             println("You noped: \(self.currentItem()?.title)")
-        }
-        else{
+            
+        } else{
             println("You liked: \(self.currentItem()?.title)")
             
             // Customize animation for pushViewController
@@ -262,8 +265,10 @@ class ChooseItemViewController: UIViewController, MDCSwipeToChooseDelegate {
         // Display the second ChooseItemView in back. This view controller uses
         // the MDCSwipeToChooseDelegate protocol methods to update the front and
         // back views after each user swipe.
+        if (items.count > 0) {
         backCardView = popItemViewWithFrame(backCardViewFrame())!
         view.insertSubview(backCardView, belowSubview: frontCardView)
+        }
     }
     
     private func currentItem() -> Item? {
