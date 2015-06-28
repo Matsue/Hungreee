@@ -31,15 +31,10 @@ class ChooseItemViewController: UIViewController, MDCSwipeToChooseDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let userDefault:NSUserDefaults = NSUserDefaults.standardUserDefaults()
-        //if !userDefault.boolForKey("is_welcomed") {
-            let welcomeVc = WelcomeViewController()
-            self.presentViewController(welcomeVc, animated: true, completion: nil)
-            
-            userDefault.setBool(true, forKey: "is_welcomed")
-            userDefault.synchronize()
         
-        //}
+        //show everytime
+        let welcomeVc = WelcomeViewController()
+        self.presentViewController(welcomeVc, animated: true, completion: nil)
         
         showFirstCards()
         
@@ -56,6 +51,41 @@ class ChooseItemViewController: UIViewController, MDCSwipeToChooseDelegate {
         image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         navigationController?.navigationBar.addSubview(UIImageView(image: image))
+        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        // set observer
+        print("adding notification")
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "handlePushNotification:", name: "hungreeework", object: nil)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        print("removing observer")
+
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
+    // observer fired
+    func handlePushNotification(notification: NSNotification) {
+        print("Remote Push Received!!")
+        print(notification.userInfo)
+        let works = notification.userInfo!["work"] as! String
+        let reviewScore = notification.userInfo!["review_avg"] as! Int
+        let lat = notification.userInfo!["lat"] as! Double
+        let lng = notification.userInfo!["lng"] as! Double
+        var item = Item(
+            id: "1",
+            title: notification.userInfo!["title"] as! String,
+            imageUrl: notification.userInfo!["image_url"] as! String,
+            paybackTypes: [works],
+            reviewScore:  String(reviewScore),
+            lat: String("\(lat)"),
+            lng: String("\(lng)")
+        )
+        self.items.append(item)
+        showFirstCards()
+        layoutButtonsIfNeeded()
     }
     
     func suportedInterfaceOrientations() -> UIInterfaceOrientationMask{

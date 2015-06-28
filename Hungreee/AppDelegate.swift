@@ -13,6 +13,8 @@ import SwiftyJSON
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -85,9 +87,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             notification.hasAction = true
             application.presentLocalNotificationNow(notification)
         } else {
+            print("sending notification....")
             let notification = NSNotification(
-                name:"hungreee_work",
-                object: self,
+                name:"hungreeework",
+                object: nil,
                 userInfo:[
                     "title": json["other_data", "title"].stringValue,
                     "image_url":json["other_data", "image_url"].stringValue,
@@ -96,9 +99,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     "review_avg":json["other_data", "review_avg"].intValue,
                     "work":json["other_data", "work"].stringValue
                 ]
-
             )
-            NSNotificationCenter.defaultCenter().postNotification(notification)
+
+            //NSNotificationCenter.defaultCenter().postNotification(notification)
+
+            let queue: NSNotificationQueue = NSNotificationQueue.defaultQueue()
+            queue.enqueueNotification(notification, postingStyle: NSPostingStyle.PostASAP)
+            
         }
 
         completionHandler(.NoData)
