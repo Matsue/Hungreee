@@ -17,6 +17,8 @@ class ItemDetailPaymentsTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        // Round button
         applyButton.layer.cornerRadius = 4.0
     }
 
@@ -24,13 +26,31 @@ class ItemDetailPaymentsTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
+    // MARK: Actions for recognizer
+    
+    @IBAction func cashPaymentImageTouched(sender: UIButton) {
+        cashPaymentImageView.highlighted = true
+        workPaymentImageView.highlighted = false
+        snsPaymentImageView.highlighted = false
+    }
+    
+    @IBAction func workPaymentImageTouched(sender: UIButton) {
+        // Do nothing now
+    }
+    
+    @IBAction func snsPaymentImageTouched(sender: UIButton) {
+        cashPaymentImageView.highlighted = false
+        workPaymentImageView.highlighted = false
+        snsPaymentImageView.highlighted = true
+    }
+    
     // MARK: Construction
     
     func constructWithItem(item: Item) {
-        cashPaymentImageView.sd_setImageWithURL(NSURL(string: item.imageUrl))
-        workPaymentImageView.sd_setImageWithURL(NSURL(string: item.imageUrl))
-        snsPaymentImageView.sd_setImageWithURL(NSURL(string: item.imageUrl))
+        // TODO: Manage icons with item object
     }
+    
+    // MARK: IBActions
     
     @IBAction func apply(sender: UIButton) {
     }

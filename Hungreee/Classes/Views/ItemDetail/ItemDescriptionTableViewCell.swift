@@ -31,7 +31,7 @@ class ItemDetailDescriptionTableViewCell: UITableViewCell {
             starSize: CGSize(width: 20, height: 20),
             numberOfStars: 5,
             rating: Float(item.reviewScore),
-            fillColor: UIColor.yellowColor(),
+            fillColor: UIColor.orangeColor(),
             unfilledColor: UIColor.grayColor(),
             strokeColor: UIColor.whiteColor()
         )
