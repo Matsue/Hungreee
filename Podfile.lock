@@ -5,6 +5,7 @@ PODS:
     - EARestrictedScrollView (~> 0.2.0)
   - EARestrictedScrollView (0.2.0)
   - MDCSwipeToChoose (0.2.2)
+  - RKNotificationHub (2.0.0)
   - SDWebImage (3.7.2):
     - SDWebImage/Core (= 3.7.2)
   - SDWebImage/Core (3.7.2)
@@ -15,6 +16,7 @@ DEPENDENCIES:
   - DJWStarRatingView
   - EAIntroView (~> 2.7.0)
   - MDCSwipeToChoose
+  - RKNotificationHub
   - SDWebImage (~> 3.7)
   - SwiftyJSON (~> 2.2.0)
 
@@ -24,6 +26,7 @@ SPEC CHECKSUMS:
   EAIntroView: 50b85eedf414260e61330070ffe5947e72493a62
   EARestrictedScrollView: f86d61e16c61d3e93c84f8e96e83122a2a3b7631
   MDCSwipeToChoose: 715aefacd3cc884c448fcdc70638c04a3056408c
+  RKNotificationHub: 4aa3f0579c90caf96c4c0d7ab8e3f5ef5ad90b87
   SDWebImage: 71b7cdc1d1721d6a82ed62889030225f2c249e29
   SwiftyJSON: 0b3e6c07af17ff745e77e8e9984097b55c956e5c
 

@@ -8,6 +8,7 @@
 
 import UIKit
 import MDCSwipeToChoose
+import RKNotificationHub
 
 class ChooseItemViewController: UIViewController, MDCSwipeToChooseDelegate {
     
@@ -51,6 +52,11 @@ class ChooseItemViewController: UIViewController, MDCSwipeToChooseDelegate {
         image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         navigationController?.navigationBar.addSubview(UIImageView(image: image))
+        
+        // latest numbers
+        
+        var numHub: RKNotificationHub = RKNotificationHub(view: self.view)
+        numHub.increment()
         
     }
     
