@@ -75,6 +75,38 @@
             </objects>
             <point key="canvasLocation" x="608" y="51"/>
         </scene>
+        <!--Waiting View Controller-->
+        <scene sceneID="bT7-LB-YRW">
+            <objects>
+                <viewController storyboardIdentifier="WaitingViewControllerID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yzh-hH-rZp" customClass="WaitingViewController" customModule="Hungreee" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UqG-Nn-OVB"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ria-Ss-OAh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="p2h-Xa-mku">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rpG-L8-7Z9" customClass="CircleImageView" customModule="Hungreee" customModuleProvider="target">
+                                <rect key="frame" x="210" y="210" width="180" height="180"/>
+                                <color key="backgroundColor" red="0.96470588239999999" green="0.74901960779999999" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="rpG-L8-7Z9" secondAttribute="height" multiplier="1:1" id="xaX-W0-ZTr"/>
+                                    <constraint firstAttribute="width" constant="180" id="zLr-3d-fXP"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="rpG-L8-7Z9" secondAttribute="centerY" id="PkB-dl-e58"/>
+                            <constraint firstAttribute="centerX" secondItem="rpG-L8-7Z9" secondAttribute="centerX" id="VKb-vr-RF0"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="15f-tM-Fts" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="608" y="721"/>
+        </scene>
         <!--Item Detail Table View Controller-->
         <scene sceneID="D7I-wf-B0a">
             <objects>
@@ -341,12 +373,12 @@
     </scenes>
     <resources>
         <image name="distance_pin" width="384" height="554"/>
-        <image name="dollar_white" width="212" height="461"/>
-        <image name="dollar_yellow" width="212" height="461"/>
+        <image name="dollar_white" width="526" height="524"/>
+        <image name="dollar_yellow" width="628" height="502"/>
         <image name="eat" width="479" height="481"/>
         <image name="noteat" width="490" height="490"/>
-        <image name="review_white" width="422" height="376"/>
-        <image name="review_yellow" width="422" height="376"/>
-        <image name="task_white" width="422" height="412"/>
+        <image name="review_white" width="659" height="562"/>
+        <image name="review_yellow" width="667" height="573"/>
+        <image name="task_white" width="680" height="606"/>
     </resources>
 </document>
