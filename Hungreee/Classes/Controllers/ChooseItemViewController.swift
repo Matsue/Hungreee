@@ -131,10 +131,6 @@ class ChooseItemViewController: UIViewController, MDCSwipeToChooseDelegate {
         // and "LIKED" on swipes to the right.
         if(wasChosenWithDirection == MDCSwipeDirection.Left){
             println("You noped: \(self.currentItem()?.title)")
-            
-            let mapViewCnt:UIViewController = self.storyboard?.instantiateViewControllerWithIdentifier("mapView") as! UIViewController
-            navigationController?.pushViewController(mapViewCnt, animated: true)
-            
         } else{
             println("You liked: \(self.currentItem()?.title)")
             

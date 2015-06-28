@@ -123,6 +123,8 @@
                                 <rect key="frame" x="210" y="210" width="180" height="180"/>
                                 <color key="backgroundColor" red="0.96470588239999999" green="0.74901960779999999" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="180" id="Eyu-AN-RDE"/>
+                                    <constraint firstAttribute="height" constant="180" id="rgl-Sw-Eso"/>
                                     <constraint firstAttribute="width" secondItem="rpG-L8-7Z9" secondAttribute="height" multiplier="1:1" id="xaX-W0-ZTr"/>
                                     <constraint firstAttribute="width" constant="180" id="zLr-3d-fXP"/>
                                 </constraints>
@@ -133,15 +135,28 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q7U-hQ-WkV">
+                                <rect key="frame" x="210" y="210" width="180" height="180"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="openMap:" destination="yzh-hH-rZp" eventType="touchUpInside" id="gtt-Tl-SiC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="w3e-R3-vtO" firstAttribute="width" secondItem="rpG-L8-7Z9" secondAttribute="width" id="53m-Ts-9Xk"/>
+                            <constraint firstItem="Q7U-hQ-WkV" firstAttribute="centerX" secondItem="rpG-L8-7Z9" secondAttribute="centerX" id="5KR-cW-igc"/>
+                            <constraint firstItem="Q7U-hQ-WkV" firstAttribute="height" secondItem="rpG-L8-7Z9" secondAttribute="height" id="CCC-ln-SOO"/>
+                            <constraint firstItem="Q7U-hQ-WkV" firstAttribute="width" secondItem="rpG-L8-7Z9" secondAttribute="width" id="Flk-3f-D9c"/>
                             <constraint firstItem="w3e-R3-vtO" firstAttribute="centerX" secondItem="rpG-L8-7Z9" secondAttribute="centerX" constant="40" id="IoZ-3h-ggh"/>
                             <constraint firstAttribute="centerY" secondItem="rpG-L8-7Z9" secondAttribute="centerY" id="PkB-dl-e58"/>
                             <constraint firstAttribute="centerX" secondItem="rpG-L8-7Z9" secondAttribute="centerX" id="VKb-vr-RF0"/>
                             <constraint firstItem="w3e-R3-vtO" firstAttribute="centerY" secondItem="rpG-L8-7Z9" secondAttribute="centerY" id="W7K-wP-KvF"/>
                             <constraint firstItem="w3e-R3-vtO" firstAttribute="height" secondItem="rpG-L8-7Z9" secondAttribute="height" id="bQT-8S-ccC"/>
+                            <constraint firstItem="Q7U-hQ-WkV" firstAttribute="centerY" secondItem="rpG-L8-7Z9" secondAttribute="centerY" id="qcz-z9-3RR"/>
                         </constraints>
                     </view>
                 </viewController>
