@@ -21,7 +21,7 @@ class ItemDetailImageTableViewCell: UITableViewCell {
     
     func constructWithItem(item: Item) {
         itemImageView.sd_setImageWithURL(NSURL(string: item.imageUrl))
-        shopImageView.sd_setImageWithURL(NSURL(string: item.imageUrl))
+        shopImageView.sd_setImageWithURL(NSURL(string: "https://s3-ap-northeast-1.amazonaws.com/makemirror/hungreee/shop2.png"))
     }
     
 }

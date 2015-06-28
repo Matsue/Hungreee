@@ -144,6 +144,9 @@
                                     <action selector="openMap:" destination="yzh-hH-rZp" eventType="touchUpInside" id="gtt-Tl-SiC"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="nt9-DL-cja">
+                                <rect key="frame" x="290" y="160" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
