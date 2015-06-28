@@ -95,11 +95,21 @@
                                     <constraint firstAttribute="width" constant="180" id="zLr-3d-fXP"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are waiting answer..." lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w3e-R3-vtO">
+                                <rect key="frame" x="250" y="210" width="180" height="180"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="w3e-R3-vtO" firstAttribute="width" secondItem="rpG-L8-7Z9" secondAttribute="width" id="53m-Ts-9Xk"/>
+                            <constraint firstItem="w3e-R3-vtO" firstAttribute="centerX" secondItem="rpG-L8-7Z9" secondAttribute="centerX" constant="40" id="IoZ-3h-ggh"/>
                             <constraint firstAttribute="centerY" secondItem="rpG-L8-7Z9" secondAttribute="centerY" id="PkB-dl-e58"/>
                             <constraint firstAttribute="centerX" secondItem="rpG-L8-7Z9" secondAttribute="centerX" id="VKb-vr-RF0"/>
+                            <constraint firstItem="w3e-R3-vtO" firstAttribute="centerY" secondItem="rpG-L8-7Z9" secondAttribute="centerY" id="W7K-wP-KvF"/>
+                            <constraint firstItem="w3e-R3-vtO" firstAttribute="height" secondItem="rpG-L8-7Z9" secondAttribute="height" id="bQT-8S-ccC"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -240,7 +250,7 @@
                                     <outlet property="titleLabel" destination="i0Z-jN-2dp" id="9hW-cn-tan"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ItemDetailPaymentsTableViewCellID" rowHeight="188" id="IVm-Eo-Ot9" customClass="ItemDetailPaymentsTableViewCell" customModule="Hungreee" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ItemDetailPaymentsTableViewCellID" rowHeight="159" id="IVm-Eo-Ot9" customClass="ItemDetailPaymentsTableViewCell" customModule="Hungreee" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IVm-Eo-Ot9" id="tUb-Jn-Ecl">
@@ -262,18 +272,6 @@
                                                 <constraint firstAttribute="width" constant="88" id="xPh-Yt-TeI"/>
                                             </constraints>
                                         </imageView>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A0w-8X-VNQ">
-                                            <rect key="frame" x="16" y="120" width="568" height="30"/>
-                                            <color key="backgroundColor" red="0.24705882352941178" green="0.32941176470588235" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                            <state key="normal" title="APPLY">
-                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
-                                            <connections>
-                                                <action selector="apply:" destination="IVm-Eo-Ot9" eventType="touchUpInside" id="GBi-vj-7eE"/>
-                                            </connections>
-                                        </button>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="review_white" highlightedImage="review_yellow" translatesAutoresizingMaskIntoConstraints="NO" id="4Ut-gd-fHU" customClass="CircleImageView" customModule="Hungreee" customModuleProvider="target">
                                             <rect key="frame" x="360" y="16" width="88" height="88"/>
                                             <constraints>
@@ -308,8 +306,21 @@
                                                 <action selector="snsPaymentImageTouched:" destination="IVm-Eo-Ot9" eventType="touchUpInside" id="Hbj-O0-KU1"/>
                                             </connections>
                                         </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A0w-8X-VNQ">
+                                            <rect key="frame" x="16" y="120" width="568" height="30"/>
+                                            <color key="backgroundColor" red="0.24705882352941178" green="0.32941176470588235" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                            <state key="normal" title="APPLY">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="apply:" destination="IVm-Eo-Ot9" eventType="touchUpInside" id="bFO-BZ-6Hg"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="A0w-8X-VNQ" secondAttribute="bottom" constant="8" id="3Ol-xG-Pwb"/>
                                         <constraint firstItem="ziP-c4-QQQ" firstAttribute="centerY" secondItem="rbJ-9d-XPR" secondAttribute="centerY" id="4Nb-mH-6QY"/>
                                         <constraint firstItem="vR4-lh-qQE" firstAttribute="width" secondItem="ziP-c4-QQQ" secondAttribute="width" id="5zB-LY-mOZ"/>
                                         <constraint firstItem="ziP-c4-QQQ" firstAttribute="leading" secondItem="rbJ-9d-XPR" secondAttribute="trailing" constant="16" id="7al-IA-bJe"/>
@@ -317,6 +328,7 @@
                                         <constraint firstItem="A0w-8X-VNQ" firstAttribute="top" secondItem="ziP-c4-QQQ" secondAttribute="bottom" constant="16" id="Gnr-Tc-Qge"/>
                                         <constraint firstItem="rbJ-9d-XPR" firstAttribute="height" secondItem="HWI-CS-KlM" secondAttribute="height" id="JZF-Ag-taQ"/>
                                         <constraint firstItem="vR4-lh-qQE" firstAttribute="centerY" secondItem="ziP-c4-QQQ" secondAttribute="centerY" id="Jgv-j4-HQP"/>
+                                        <constraint firstAttribute="bottom" secondItem="A0w-8X-VNQ" secondAttribute="bottom" constant="8" id="JvQ-yX-Xos"/>
                                         <constraint firstItem="vR4-lh-qQE" firstAttribute="height" secondItem="ziP-c4-QQQ" secondAttribute="height" id="RAs-cW-gIs"/>
                                         <constraint firstItem="pMu-gk-Avm" firstAttribute="height" secondItem="4Ut-gd-fHU" secondAttribute="height" id="SJp-ki-fHC"/>
                                         <constraint firstAttribute="centerX" secondItem="ziP-c4-QQQ" secondAttribute="centerX" id="T23-YN-aFb"/>

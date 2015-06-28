@@ -84,7 +84,7 @@ class ItemDetailTableViewController: UITableViewController, ItemDetailPaymentsTa
         case ItemDetailTableViewRows.ItemPaymentsRow.hashValue:
             // TODO: Calculate height dynamically
 //            height = createItemDetailPaymentsTableViewCellIfNeeded(item).frame.height
-            height = 104
+            height = 158
             
         default:
             height = CGFloat.min
@@ -114,6 +114,7 @@ class ItemDetailTableViewController: UITableViewController, ItemDetailPaymentsTa
     private func createItemDetailPaymentsTableViewCellIfNeeded(item: Item) -> ItemDetailPaymentsTableViewCell {
         if itemDetailPaymentsTableViewCell == nil {
             itemDetailPaymentsTableViewCell = tableView.dequeueReusableCellWithIdentifier("ItemDetailPaymentsTableViewCellID") as? ItemDetailPaymentsTableViewCell
+            itemDetailPaymentsTableViewCell.delegate = self
             itemDetailPaymentsTableViewCell?.constructWithItem(item)
         }
         

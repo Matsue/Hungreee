@@ -32,7 +32,13 @@ class ItemDetailPaymentsTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    // MARK: Actions for recognizer
+    // MARK: Construction
+    
+    func constructWithItem(item: Item) {
+        // TODO: Manage icons with item object
+    }
+    
+    // MARK: IBActions
     
     @IBAction func cashPaymentImageTouched(sender: UIButton) {
         cashPaymentImageView.highlighted = true
@@ -50,15 +56,8 @@ class ItemDetailPaymentsTableViewCell: UITableViewCell {
         snsPaymentImageView.highlighted = true
     }
     
-    // MARK: Construction
-    
-    func constructWithItem(item: Item) {
-        // TODO: Manage icons with item object
-    }
-    
-    // MARK: IBActions
-    
     @IBAction func apply(sender: UIButton) {
         delegate?.itemDetailPaymentsTableViewCellDelegate(self, didClickApplyButton: sender)
     }
+    
 }
