@@ -165,9 +165,9 @@ class ChooseItemViewController: UIViewController, MDCSwipeToChooseDelegate {
                 lng: "139.74955"
             ),
             Item(
-                id: "2",
-                title: "Restaurant \"Paella\"'s Paella",
-                imageUrl: "https://s3-ap-northeast-1.amazonaws.com/makemirror/hungreee/PHOT000000000011C7B7.jpg",
+                id: "5",
+                title: "New Great \"Sushi\"",
+                imageUrl: "https://s3-ap-northeast-1.amazonaws.com/makemirror/hungreee/PHOT000000000012DDAF.jpg",
                 paybackTypes: ["review"],
                 reviewScore: "5",
                 lat: "35.666851",
