@@ -13,9 +13,6 @@ import SwiftyJSON
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    
-    
-
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
@@ -23,16 +20,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var types: UIUserNotificationType = UIUserNotificationType.Badge |
             UIUserNotificationType.Alert |
             UIUserNotificationType.Sound
-        
-        
         var settings: UIUserNotificationSettings = UIUserNotificationSettings( forTypes: types, categories: nil )
         
         application.registerUserNotificationSettings( settings )
         application.registerForRemoteNotifications()
 
-
-        
-        
         return true
     }
 

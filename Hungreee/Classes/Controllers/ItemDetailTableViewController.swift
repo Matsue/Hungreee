@@ -29,6 +29,7 @@ class ItemDetailTableViewController: UITableViewController, ItemDetailPaymentsTa
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
     }
     
     // MARK: Construction

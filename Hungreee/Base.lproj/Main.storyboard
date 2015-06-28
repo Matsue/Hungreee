@@ -18,11 +18,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tb2-qF-hRE">
-                                <rect key="frame" x="187" y="506" width="50" height="50"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QcG-gD-Dt7" userLabel="Nope Button Background" customClass="CircleImageView" customModule="Hungreee" customModuleProvider="target">
+                                <rect key="frame" x="182" y="472" width="104" height="104"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="BJU-nG-4dc"/>
-                                    <constraint firstAttribute="height" constant="50" id="wDM-SF-XBR"/>
+                                    <constraint firstAttribute="width" secondItem="QcG-gD-Dt7" secondAttribute="height" multiplier="1:1" id="gSg-nS-qFi"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tb2-qF-hRE" userLabel="Nope Button">
+                                <rect key="frame" x="190" y="480" width="88" height="88"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="88" id="BJU-nG-4dc"/>
+                                    <constraint firstAttribute="width" secondItem="Tb2-qF-hRE" secondAttribute="height" multiplier="1:1" id="DiY-04-wl2"/>
                                 </constraints>
                                 <state key="normal" image="noteat">
                                     <color key="titleColor" red="0.96862745098039216" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -32,11 +39,18 @@
                                     <action selector="nopeFrontCardView:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="wsg-H3-98z"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fc7-C1-Wm3">
-                                <rect key="frame" x="363" y="506" width="50" height="50"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dEP-Hm-7Dk" userLabel="Like Button Background" customClass="CircleImageView" customModule="Hungreee" customModuleProvider="target">
+                                <rect key="frame" x="314" y="472" width="104" height="104"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="BIa-Iz-PbV"/>
-                                    <constraint firstAttribute="width" constant="50" id="BbJ-YV-2an"/>
+                                    <constraint firstAttribute="width" secondItem="dEP-Hm-7Dk" secondAttribute="height" multiplier="1:1" id="uUn-jg-994"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fc7-C1-Wm3" userLabel="Like Button">
+                                <rect key="frame" x="322" y="480" width="88" height="88"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="88" id="BbJ-YV-2an"/>
+                                    <constraint firstAttribute="width" secondItem="Fc7-C1-Wm3" secondAttribute="height" multiplier="1:1" id="ktu-3q-8eC"/>
                                 </constraints>
                                 <state key="normal" image="eat">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -62,16 +76,22 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.97254901959999995" green="0.94509803920000002" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="yjw-Yu-SxB" secondAttribute="centerY" id="EcK-7K-xFV"/>
                             <constraint firstItem="Fc7-C1-Wm3" firstAttribute="centerY" secondItem="Tb2-qF-hRE" secondAttribute="centerY" id="F3U-gg-QSU"/>
                             <constraint firstAttribute="trailingMargin" secondItem="5c7-Cc-WB6" secondAttribute="trailing" constant="16" id="Grl-me-WNj"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Tb2-qF-hRE" secondAttribute="bottom" constant="44" id="HhG-tY-i0p"/>
-                            <constraint firstAttribute="centerX" secondItem="Tb2-qF-hRE" secondAttribute="centerX" constant="88" id="QCs-cZ-Wfi"/>
-                            <constraint firstAttribute="centerX" secondItem="yjw-Yu-SxB" secondAttribute="centerX" id="j4m-Np-auM"/>
-                            <constraint firstAttribute="centerX" secondItem="Fc7-C1-Wm3" secondAttribute="centerX" constant="-88" id="qcM-ce-lg9"/>
                             <constraint firstItem="5c7-Cc-WB6" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="u36-jC-16k"/>
+                            <constraint firstItem="dEP-Hm-7Dk" firstAttribute="width" secondItem="Fc7-C1-Wm3" secondAttribute="width" constant="16" id="Gw2-8T-Lb8"/>
+                            <constraint firstItem="Tb2-qF-hRE" firstAttribute="centerY" secondItem="QcG-gD-Dt7" secondAttribute="centerY" id="Hki-Mw-qOO"/>
+                            <constraint firstItem="Tb2-qF-hRE" firstAttribute="width" secondItem="QcG-gD-Dt7" secondAttribute="width" constant="-16" id="Pik-qf-4uq"/>
+                            <constraint firstAttribute="centerX" secondItem="Tb2-qF-hRE" secondAttribute="centerX" constant="66" id="QCs-cZ-Wfi"/>
+                            <constraint firstItem="dEP-Hm-7Dk" firstAttribute="centerY" secondItem="Fc7-C1-Wm3" secondAttribute="centerY" id="hO2-QB-WWF"/>
+                            <constraint firstItem="Tb2-qF-hRE" firstAttribute="centerX" secondItem="QcG-gD-Dt7" secondAttribute="centerX" id="inT-Za-i0s"/>
+                            <constraint firstAttribute="centerX" secondItem="yjw-Yu-SxB" secondAttribute="centerX" id="j4m-Np-auM"/>
+                            <constraint firstItem="dEP-Hm-7Dk" firstAttribute="centerX" secondItem="Fc7-C1-Wm3" secondAttribute="centerX" id="nYp-g1-kwY"/>
+                            <constraint firstAttribute="centerX" secondItem="Fc7-C1-Wm3" secondAttribute="centerX" constant="-66" id="qcM-ce-lg9"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="1vC-uz-gjm"/>

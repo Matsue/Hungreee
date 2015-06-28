@@ -40,6 +40,15 @@ class ChooseItemViewController: UIViewController, MDCSwipeToChooseDelegate {
         self.presentViewController(welcomeVc, animated: true, completion: nil)
         
         showFirstCards()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        //
+        // Navigation
+        //
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
         
         // Navigation background color
         navigationController?.navigationBar.barTintColor = UIColor(red: 255.0/255.0, green: 204.0/255.0, blue: 0.0/255.0, alpha: 1.0);
@@ -58,6 +67,11 @@ class ChooseItemViewController: UIViewController, MDCSwipeToChooseDelegate {
         // latest numbers
         numHub = RKNotificationHub(view: homeButton)
         
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        // set observer
+        print("adding notification")
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "handlePushNotification:", name: "hungreeework", object: nil)
         
     }
