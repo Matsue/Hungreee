@@ -19,14 +19,14 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QcG-gD-Dt7" userLabel="Nope Button Background" customClass="CircleImageView" customModule="Hungreee" customModuleProvider="target">
-                                <rect key="frame" x="182" y="472" width="104" height="104"/>
+                                <rect key="frame" x="182" y="460" width="104" height="104"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="QcG-gD-Dt7" secondAttribute="height" multiplier="1:1" id="gSg-nS-qFi"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tb2-qF-hRE" userLabel="Nope Button">
-                                <rect key="frame" x="190" y="480" width="88" height="88"/>
+                                <rect key="frame" x="190" y="468" width="88" height="88"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="88" id="BJU-nG-4dc"/>
                                     <constraint firstAttribute="width" secondItem="Tb2-qF-hRE" secondAttribute="height" multiplier="1:1" id="DiY-04-wl2"/>
@@ -40,14 +40,14 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dEP-Hm-7Dk" userLabel="Like Button Background" customClass="CircleImageView" customModule="Hungreee" customModuleProvider="target">
-                                <rect key="frame" x="314" y="472" width="104" height="104"/>
+                                <rect key="frame" x="314" y="460" width="104" height="104"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="dEP-Hm-7Dk" secondAttribute="height" multiplier="1:1" id="uUn-jg-994"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fc7-C1-Wm3" userLabel="Like Button">
-                                <rect key="frame" x="322" y="480" width="88" height="88"/>
+                                <rect key="frame" x="322" y="468" width="88" height="88"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="88" id="BbJ-YV-2an"/>
                                     <constraint firstAttribute="width" secondItem="Fc7-C1-Wm3" secondAttribute="height" multiplier="1:1" id="ktu-3q-8eC"/>
@@ -81,9 +81,8 @@
                             <constraint firstAttribute="centerY" secondItem="yjw-Yu-SxB" secondAttribute="centerY" id="EcK-7K-xFV"/>
                             <constraint firstItem="Fc7-C1-Wm3" firstAttribute="centerY" secondItem="Tb2-qF-hRE" secondAttribute="centerY" id="F3U-gg-QSU"/>
                             <constraint firstAttribute="trailingMargin" secondItem="5c7-Cc-WB6" secondAttribute="trailing" constant="16" id="Grl-me-WNj"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Tb2-qF-hRE" secondAttribute="bottom" constant="44" id="HhG-tY-i0p"/>
-                            <constraint firstItem="5c7-Cc-WB6" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="u36-jC-16k"/>
                             <constraint firstItem="dEP-Hm-7Dk" firstAttribute="width" secondItem="Fc7-C1-Wm3" secondAttribute="width" constant="16" id="Gw2-8T-Lb8"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Tb2-qF-hRE" secondAttribute="bottom" constant="44" id="HhG-tY-i0p"/>
                             <constraint firstItem="Tb2-qF-hRE" firstAttribute="centerY" secondItem="QcG-gD-Dt7" secondAttribute="centerY" id="Hki-Mw-qOO"/>
                             <constraint firstItem="Tb2-qF-hRE" firstAttribute="width" secondItem="QcG-gD-Dt7" secondAttribute="width" constant="-16" id="Pik-qf-4uq"/>
                             <constraint firstAttribute="centerX" secondItem="Tb2-qF-hRE" secondAttribute="centerX" constant="66" id="QCs-cZ-Wfi"/>
@@ -92,12 +91,15 @@
                             <constraint firstAttribute="centerX" secondItem="yjw-Yu-SxB" secondAttribute="centerX" id="j4m-Np-auM"/>
                             <constraint firstItem="dEP-Hm-7Dk" firstAttribute="centerX" secondItem="Fc7-C1-Wm3" secondAttribute="centerX" id="nYp-g1-kwY"/>
                             <constraint firstAttribute="centerX" secondItem="Fc7-C1-Wm3" secondAttribute="centerX" constant="-66" id="qcM-ce-lg9"/>
+                            <constraint firstItem="5c7-Cc-WB6" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="u36-jC-16k"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="1vC-uz-gjm"/>
                     <connections>
                         <outlet property="homeButton" destination="5c7-Cc-WB6" id="s0e-ee-5er"/>
+                        <outlet property="likeBackgroundImabeView" destination="dEP-Hm-7Dk" id="q85-ni-Li2"/>
                         <outlet property="likeButton" destination="Fc7-C1-Wm3" id="TFS-pm-7hv"/>
+                        <outlet property="nopeBackgroundImabeView" destination="QcG-gD-Dt7" id="4V4-jq-g4f"/>
                         <outlet property="nopeButton" destination="Tb2-qF-hRE" id="Sbp-1v-XdF"/>
                     </connections>
                 </viewController>

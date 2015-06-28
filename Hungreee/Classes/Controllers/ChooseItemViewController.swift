@@ -21,6 +21,8 @@ class ChooseItemViewController: UIViewController, MDCSwipeToChooseDelegate {
     @IBOutlet weak var nopeButton: UIButton!
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var homeButton: UIImageView!
+    @IBOutlet weak var nopeBackgroundImabeView: CircleImageView!
+    @IBOutlet weak var likeBackgroundImabeView: CircleImageView!
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -267,9 +269,13 @@ class ChooseItemViewController: UIViewController, MDCSwipeToChooseDelegate {
         if backCardView == nil {
             nopeButton.hidden = true
             likeButton.hidden = true
+            nopeBackgroundImabeView.hidden = true
+            likeBackgroundImabeView.hidden = true
         } else {
             nopeButton.hidden = false
             likeButton.hidden = false
+            nopeBackgroundImabeView.hidden = false
+            likeBackgroundImabeView.hidden = false
         }
     }
     
