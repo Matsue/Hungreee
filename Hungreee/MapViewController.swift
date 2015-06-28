@@ -15,6 +15,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
 
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
         mapView = MKMapView()
     }
     
@@ -43,5 +44,11 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         addPinToMapView()
+        var timer = NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
+    }
+    
+    func update() {
+        let mapViewCnt:UIViewController = self.storyboard?.instantiateViewControllerWithIdentifier("reviewViewControllerID") as! UIViewController
+        navigationController?.pushViewController(mapViewCnt, animated: true)
     }
 }
