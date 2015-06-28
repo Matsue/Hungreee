@@ -47,9 +47,9 @@ class ChooseItemView: MDCSwipeToChooseView {
         informationView.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleTopMargin
         addSubview(informationView)
         constructNameLabel()
-        constructCameraImageLabelView()
-        constructInterestsImageLabelView()
-        constructFriendsImageLabelView()
+//        constructCameraImageLabelView()
+//        constructInterestsImageLabelView()
+//        constructFriendsImageLabelView()
     }
     
     func constructNameLabel() -> Void {
@@ -57,7 +57,7 @@ class ChooseItemView: MDCSwipeToChooseView {
         var topPadding:CGFloat = 17.0
         var frame:CGRect = CGRectMake(leftPadding,
             topPadding,
-            floor(CGRectGetWidth(informationView.frame)/2),
+            floor(CGRectGetWidth(informationView.frame)),
             CGRectGetHeight(informationView.frame) - topPadding)
         nameLabel = UILabel(frame:frame)
         nameLabel.text = item.title
