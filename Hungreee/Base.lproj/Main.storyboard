@@ -82,7 +82,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="351" sectionHeaderHeight="22" sectionFooterHeight="22" id="UH4-MJ-SMd">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.97254901960784312" green="0.94509803921568625" blue="0.81960784313725488" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ItemDetailImageTableViewCellID" rowHeight="180" id="x2r-PY-4sp" customClass="ItemDetailImageTableViewCell" customModule="Hungreee" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -123,6 +123,7 @@
                                         <constraint firstItem="1qt-bx-q3Y" firstAttribute="top" secondItem="RmY-l1-Vh9" secondAttribute="top" id="oQM-uh-nnE"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="itemImageView" destination="HUG-Mp-Aqa" id="thf-tw-0zF"/>
                                     <outlet property="shopImageView" destination="cDM-BC-5fT" id="7iP-2R-QGj"/>
@@ -171,13 +172,22 @@
                                             <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="distance_pin" translatesAutoresizingMaskIntoConstraints="NO" id="We0-E8-HTl">
+                                            <rect key="frame" x="520" y="8" width="14" height="22"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="22" id="NYb-nd-z98"/>
+                                                <constraint firstAttribute="width" constant="14" id="Rww-an-CBK"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="Iho-zL-qQG" firstAttribute="top" secondItem="wz2-or-yfQ" secondAttribute="bottom" id="7AO-K3-MBr"/>
                                         <constraint firstAttribute="trailing" secondItem="Iho-zL-qQG" secondAttribute="trailing" constant="66" id="7yk-A2-jMv"/>
                                         <constraint firstAttribute="trailing" secondItem="aae-vt-BCt" secondAttribute="trailing" constant="8" id="94W-tD-KWQ"/>
+                                        <constraint firstItem="aae-vt-BCt" firstAttribute="leading" secondItem="We0-E8-HTl" secondAttribute="trailing" constant="8" id="Sbq-Uf-qUY"/>
                                         <constraint firstAttribute="trailing" secondItem="i0Z-jN-2dp" secondAttribute="trailing" id="TJZ-hh-LDa"/>
                                         <constraint firstItem="2f5-ee-isG" firstAttribute="height" secondItem="Iho-zL-qQG" secondAttribute="height" id="VHG-8R-KTd"/>
+                                        <constraint firstItem="We0-E8-HTl" firstAttribute="centerY" secondItem="aae-vt-BCt" secondAttribute="centerY" id="Wk5-b5-ztH"/>
                                         <constraint firstItem="2f5-ee-isG" firstAttribute="leading" secondItem="Iho-zL-qQG" secondAttribute="trailing" id="Xgf-Kw-e49"/>
                                         <constraint firstItem="i0Z-jN-2dp" firstAttribute="leading" secondItem="dao-BM-sCs" secondAttribute="leading" id="Xxy-tA-mVe"/>
                                         <constraint firstAttribute="trailing" secondItem="wz2-or-yfQ" secondAttribute="trailing" id="YmO-dy-eex"/>
@@ -190,6 +200,7 @@
                                         <constraint firstAttribute="trailingMargin" secondItem="2f5-ee-isG" secondAttribute="trailing" constant="-21" id="zOx-Wv-hea"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="reviewScoreLabel" destination="2f5-ee-isG" id="ZfE-Kh-Mne"/>
                                     <outlet property="starRatingView" destination="Iho-zL-qQG" id="0mc-hL-bSJ"/>
@@ -203,23 +214,25 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IVm-Eo-Ot9" id="tUb-Jn-Ecl">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rbJ-9d-XPR" customClass="CircleImageView" customModule="Hungreee" customModuleProvider="target">
+                                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dollar_white" highlightedImage="dollar_yellow" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rbJ-9d-XPR" customClass="CircleImageView" customModule="Hungreee" customModuleProvider="target">
                                             <rect key="frame" x="152" y="16" width="88" height="88"/>
+                                            <gestureRecognizers/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="88" id="N8B-rF-08Y"/>
                                                 <constraint firstAttribute="width" constant="88" id="fVt-Eq-Stq"/>
                                             </constraints>
                                         </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4Ut-gd-fHU" customClass="CircleImageView" customModule="Hungreee" customModuleProvider="target">
-                                            <rect key="frame" x="360" y="16" width="88" height="88"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="task_white" highlightedImage="task_white" translatesAutoresizingMaskIntoConstraints="NO" id="ziP-c4-QQQ" customClass="CircleImageView" customModule="Hungreee" customModuleProvider="target">
+                                            <rect key="frame" x="256" y="16" width="88" height="88"/>
+                                            <gestureRecognizers/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="88" id="4cZ-fE-ENE"/>
-                                                <constraint firstAttribute="height" constant="88" id="MXs-Mh-4At"/>
+                                                <constraint firstAttribute="height" constant="88" id="nDn-pT-oGp"/>
+                                                <constraint firstAttribute="width" constant="88" id="xPh-Yt-TeI"/>
                                             </constraints>
                                         </imageView>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A0w-8X-VNQ">
                                             <rect key="frame" x="16" y="120" width="568" height="30"/>
-                                            <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" red="0.24705882352941178" green="0.32941176470588235" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                             <state key="normal" title="APPLY">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -229,26 +242,66 @@
                                                 <action selector="apply:" destination="IVm-Eo-Ot9" eventType="touchUpInside" id="GBi-vj-7eE"/>
                                             </connections>
                                         </button>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ziP-c4-QQQ" customClass="CircleImageView" customModule="Hungreee" customModuleProvider="target">
-                                            <rect key="frame" x="256" y="16" width="88" height="88"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="review_white" highlightedImage="review_yellow" translatesAutoresizingMaskIntoConstraints="NO" id="4Ut-gd-fHU" customClass="CircleImageView" customModule="Hungreee" customModuleProvider="target">
+                                            <rect key="frame" x="360" y="16" width="88" height="88"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="88" id="nDn-pT-oGp"/>
-                                                <constraint firstAttribute="width" constant="88" id="xPh-Yt-TeI"/>
+                                                <constraint firstAttribute="width" constant="88" id="4cZ-fE-ENE"/>
+                                                <constraint firstAttribute="height" constant="88" id="MXs-Mh-4At"/>
                                             </constraints>
                                         </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HWI-CS-KlM">
+                                            <rect key="frame" x="152" y="16" width="88" height="88"/>
+                                            <state key="normal">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="cashPaymentImageTouched:" destination="IVm-Eo-Ot9" eventType="touchUpInside" id="iGL-mb-jtO"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vR4-lh-qQE">
+                                            <rect key="frame" x="256" y="16" width="88" height="88"/>
+                                            <state key="normal">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="workPaymentImageTouched:" destination="IVm-Eo-Ot9" eventType="touchUpInside" id="wrK-N0-V4V"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pMu-gk-Avm">
+                                            <rect key="frame" x="360" y="16" width="88" height="88"/>
+                                            <state key="normal">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="snsPaymentImageTouched:" destination="IVm-Eo-Ot9" eventType="touchUpInside" id="Hbj-O0-KU1"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="ziP-c4-QQQ" firstAttribute="centerY" secondItem="rbJ-9d-XPR" secondAttribute="centerY" id="4Nb-mH-6QY"/>
+                                        <constraint firstItem="vR4-lh-qQE" firstAttribute="width" secondItem="ziP-c4-QQQ" secondAttribute="width" id="5zB-LY-mOZ"/>
                                         <constraint firstItem="ziP-c4-QQQ" firstAttribute="leading" secondItem="rbJ-9d-XPR" secondAttribute="trailing" constant="16" id="7al-IA-bJe"/>
+                                        <constraint firstItem="pMu-gk-Avm" firstAttribute="width" secondItem="4Ut-gd-fHU" secondAttribute="width" id="GUw-mp-ByT"/>
                                         <constraint firstItem="A0w-8X-VNQ" firstAttribute="top" secondItem="ziP-c4-QQQ" secondAttribute="bottom" constant="16" id="Gnr-Tc-Qge"/>
+                                        <constraint firstItem="rbJ-9d-XPR" firstAttribute="height" secondItem="HWI-CS-KlM" secondAttribute="height" id="JZF-Ag-taQ"/>
+                                        <constraint firstItem="vR4-lh-qQE" firstAttribute="centerY" secondItem="ziP-c4-QQQ" secondAttribute="centerY" id="Jgv-j4-HQP"/>
+                                        <constraint firstItem="vR4-lh-qQE" firstAttribute="height" secondItem="ziP-c4-QQQ" secondAttribute="height" id="RAs-cW-gIs"/>
+                                        <constraint firstItem="pMu-gk-Avm" firstAttribute="height" secondItem="4Ut-gd-fHU" secondAttribute="height" id="SJp-ki-fHC"/>
                                         <constraint firstAttribute="centerX" secondItem="ziP-c4-QQQ" secondAttribute="centerX" id="T23-YN-aFb"/>
                                         <constraint firstItem="ziP-c4-QQQ" firstAttribute="top" secondItem="tUb-Jn-Ecl" secondAttribute="top" constant="16" id="Xbl-C3-VZx"/>
+                                        <constraint firstItem="rbJ-9d-XPR" firstAttribute="centerY" secondItem="HWI-CS-KlM" secondAttribute="centerY" id="XiR-kD-kwr"/>
+                                        <constraint firstItem="rbJ-9d-XPR" firstAttribute="centerX" secondItem="HWI-CS-KlM" secondAttribute="centerX" id="Yr4-7m-qt5"/>
                                         <constraint firstItem="4Ut-gd-fHU" firstAttribute="leading" secondItem="ziP-c4-QQQ" secondAttribute="trailing" constant="16" id="a9a-Iy-IIk"/>
+                                        <constraint firstItem="pMu-gk-Avm" firstAttribute="centerX" secondItem="4Ut-gd-fHU" secondAttribute="centerX" id="bRu-RU-QSM"/>
+                                        <constraint firstItem="vR4-lh-qQE" firstAttribute="centerX" secondItem="ziP-c4-QQQ" secondAttribute="centerX" id="h9i-F0-uCd"/>
                                         <constraint firstItem="ziP-c4-QQQ" firstAttribute="centerY" secondItem="4Ut-gd-fHU" secondAttribute="centerY" id="jZL-5j-Onn"/>
+                                        <constraint firstItem="pMu-gk-Avm" firstAttribute="centerY" secondItem="4Ut-gd-fHU" secondAttribute="centerY" id="nqS-q0-Zul"/>
                                         <constraint firstAttribute="trailing" secondItem="A0w-8X-VNQ" secondAttribute="trailing" constant="16" id="nzV-MM-FCA"/>
                                         <constraint firstItem="A0w-8X-VNQ" firstAttribute="leading" secondItem="tUb-Jn-Ecl" secondAttribute="leading" constant="16" id="pl3-Ft-4Il"/>
+                                        <constraint firstItem="rbJ-9d-XPR" firstAttribute="width" secondItem="HWI-CS-KlM" secondAttribute="width" id="xg0-R0-ubR"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="applyButton" destination="A0w-8X-VNQ" id="Xgn-S0-BB0"/>
                                     <outlet property="cashPaymentImageView" destination="rbJ-9d-XPR" id="Rvl-e0-Yke"/>
@@ -287,7 +340,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="distance_pin" width="384" height="554"/>
+        <image name="dollar_white" width="212" height="461"/>
+        <image name="dollar_yellow" width="212" height="461"/>
         <image name="eat" width="479" height="481"/>
         <image name="noteat" width="490" height="490"/>
+        <image name="review_white" width="422" height="376"/>
+        <image name="review_yellow" width="422" height="376"/>
+        <image name="task_white" width="422" height="412"/>
     </resources>
 </document>
