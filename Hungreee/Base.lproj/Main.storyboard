@@ -144,14 +144,16 @@
                                     <action selector="openMap:" destination="yzh-hH-rZp" eventType="touchUpInside" id="gtt-Tl-SiC"/>
                                 </connections>
                             </button>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="nt9-DL-cja">
-                                <rect key="frame" x="290" y="160" width="20" height="20"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="nt9-DL-cja">
+                                <rect key="frame" x="290" y="168" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Q7U-hQ-WkV" firstAttribute="top" secondItem="nt9-DL-cja" secondAttribute="bottom" constant="22" id="1DA-qR-Spc"/>
                             <constraint firstItem="w3e-R3-vtO" firstAttribute="width" secondItem="rpG-L8-7Z9" secondAttribute="width" id="53m-Ts-9Xk"/>
                             <constraint firstItem="Q7U-hQ-WkV" firstAttribute="centerX" secondItem="rpG-L8-7Z9" secondAttribute="centerX" id="5KR-cW-igc"/>
+                            <constraint firstItem="rpG-L8-7Z9" firstAttribute="centerX" secondItem="nt9-DL-cja" secondAttribute="centerX" id="6zH-l2-Ajw"/>
                             <constraint firstItem="Q7U-hQ-WkV" firstAttribute="height" secondItem="rpG-L8-7Z9" secondAttribute="height" id="CCC-ln-SOO"/>
                             <constraint firstItem="Q7U-hQ-WkV" firstAttribute="width" secondItem="rpG-L8-7Z9" secondAttribute="width" id="Flk-3f-D9c"/>
                             <constraint firstItem="w3e-R3-vtO" firstAttribute="centerX" secondItem="rpG-L8-7Z9" secondAttribute="centerX" constant="40" id="IoZ-3h-ggh"/>
