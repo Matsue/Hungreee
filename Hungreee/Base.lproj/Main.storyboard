@@ -362,6 +362,24 @@
             </objects>
             <point key="canvasLocation" x="1314" y="51"/>
         </scene>
+        <!--Map View Controller-->
+        <scene sceneID="rej-lr-mYZ">
+            <objects>
+                <viewController storyboardIdentifier="mapView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="de5-hW-tK2" customClass="MapViewController" customModule="Hungreee" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2mn-Eu-wyd"/>
+                        <viewControllerLayoutGuide type="bottom" id="8RB-Cf-yMU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YcQ-kD-z42">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oH2-SH-iMV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1320" y="729"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="27b-zm-NxJ">
             <objects>

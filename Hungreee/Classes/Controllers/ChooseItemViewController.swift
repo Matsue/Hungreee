@@ -116,6 +116,9 @@ class ChooseItemViewController: UIViewController, MDCSwipeToChooseDelegate {
         if(wasChosenWithDirection == MDCSwipeDirection.Left){
             println("You noped: \(self.currentItem()?.title)")
             
+            let mapViewCnt:UIViewController = self.storyboard?.instantiateViewControllerWithIdentifier("mapView") as! UIViewController
+            navigationController?.pushViewController(mapViewCnt, animated: true)
+            
         } else{
             println("You liked: \(self.currentItem()?.title)")
             

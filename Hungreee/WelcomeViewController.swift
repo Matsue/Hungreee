@@ -49,6 +49,7 @@ class WelcomeViewController: UIViewController, EAIntroDelegate {
 
     func introDidFinish(introView: EAIntroView!) {
         self.dismissViewControllerAnimated(true, completion: nil)
+
     }
     func intro(introView: EAIntroView!, pageAppeared page: EAIntroPage!, withIndex pageIndex: UInt) {
         
