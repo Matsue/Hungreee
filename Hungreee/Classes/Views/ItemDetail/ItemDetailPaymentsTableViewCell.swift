@@ -8,8 +8,14 @@
 
 import UIKit
 
+protocol ItemDetailPaymentsTableViewCellDelegate {
+    func itemDetailPaymentsTableViewCellDelegate(itemDetailPaymentsTableViewCell: ItemDetailPaymentsTableViewCell, didClickApplyButton: UIButton)
+}
+
 class ItemDetailPaymentsTableViewCell: UITableViewCell {
 
+    var delegate: ItemDetailPaymentsTableViewCellDelegate!
+    
     @IBOutlet weak private(set) var cashPaymentImageView: CircleImageView!
     @IBOutlet weak private(set) var workPaymentImageView: CircleImageView!
     @IBOutlet weak private(set) var snsPaymentImageView: CircleImageView!
@@ -53,5 +59,6 @@ class ItemDetailPaymentsTableViewCell: UITableViewCell {
     // MARK: IBActions
     
     @IBAction func apply(sender: UIButton) {
+        delegate?.itemDetailPaymentsTableViewCellDelegate(self, didClickApplyButton: sender)
     }
 }

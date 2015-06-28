@@ -155,7 +155,7 @@ class ChooseItemViewController: UIViewController, MDCSwipeToChooseDelegate {
             Item(
                 id: "3",
                 title: "Let's eat together, Humberger",
-                imageUrl: "https://photos-2.dropbox.com/t/2/AAB_bO_M-WgZsfHujRr5SrLZ54OG4xV-2iFhOFicTmLJlw/12/24604400/jpeg/32x32/1/1435413600/0/2/PHOT000000000009A505_500_0.jpg/CPDd3QsgASACIAMgBCAFIAYgBygC/QWvowxvLVbd3Z4dlJaUHZdYtpt8Py_YdH9WlI0b4Giw?size=1280x960&size_mode=2",
+                imageUrl: "https://s3-ap-northeast-1.amazonaws.com/makemirror/hungreee/PHOT000000000009A505_500_0.jpg",
                 paybackTypes: ["review"],
                 reviewScore: "4",
                 lat: "35.666851",
@@ -164,7 +164,7 @@ class ChooseItemViewController: UIViewController, MDCSwipeToChooseDelegate {
             Item(
                 id: "4",
                 title: "New menu \"Steak\" at Restaurant \"Meat\"",
-                imageUrl: "https://photos-6.dropbox.com/t/2/AACzTvQ0gdxHyxKJ3Yo-I6Uuai0TH02EqIPVLZBUIPJn6w/12/24604400/jpeg/32x32/1/1435413600/0/2/PHOT000000000011C7B7.jpg/CPDd3QsgASACIAMgBCAFIAYgBygC/GX6OtjaZ0ImEMGWrDzxzTPT3yDs-LCYrsHOBd3bn72k?size=1280x960&size_mode=2",
+                imageUrl: "https://s3-ap-northeast-1.amazonaws.com/makemirror/hungreee/PHOT000000000011C7B7.jpg",
                 paybackTypes: ["review"],
                 reviewScore: "3",
                 lat: "35.666851",
@@ -173,7 +173,7 @@ class ChooseItemViewController: UIViewController, MDCSwipeToChooseDelegate {
             Item(
                 id: "2",
                 title: "Restaurant \"Paella\"'s Paella",
-                imageUrl: "https://photos-5.dropbox.com/t/2/AADTh4EsYtEhttnqEoZyijKENHncsWrRHuFewRbOmpxZJw/12/24604400/jpeg/32x32/1/1435413600/0/2/PHOT00000000000B9DB9.jpg/CPDd3QsgASACIAMgBCAFIAYgBygC/lBbbzT6YSo3S1gx4U8WJbNKcG0jvxjb0GnM07s2jYNc?size=1280x960&size_mode=2",
+                imageUrl: "https://s3-ap-northeast-1.amazonaws.com/makemirror/hungreee/PHOT000000000011C7B7.jpg",
                 paybackTypes: ["review"],
                 reviewScore: "5",
                 lat: "35.666851",
